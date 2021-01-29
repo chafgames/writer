@@ -2,9 +2,7 @@ from time import sleep
 import curses
 import curses.panel
 
-
-GAME_HEIGHT = 30
-GAME_WIDTH = 200
+from writer import config
 
 
 def make_panel(height, width, y, x, str):
@@ -22,6 +20,7 @@ def make_panel(height, width, y, x, str):
 
 
 def test(stdscr):
+    conf = config.new_config()
     try:
         curses.curs_set(0)
     except Exception:
@@ -29,7 +28,7 @@ def test(stdscr):
     stdscr.box()
     win_height, win_width = stdscr.getmaxyx()
     stdscr.addstr(win_height-1, 2, f"INFO {win_height}x{win_width}")
-    game_win, game_panel = make_panel(GAME_HEIGHT, GAME_WIDTH, 1, 2, "GAME GOES HERE")
+    game_win, game_panel = make_panel(conf.game_height, conf.game_width, 1, 2, "GAME GOES HERE")
     curses.panel.update_panels()
     stdscr.refresh()
 

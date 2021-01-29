@@ -28,7 +28,8 @@ setup(
     install_requires=requirements,
     entry_points={
         'console_scripts': [
-            'paneltest = writer.main:entrypoint',
+            'paneltest = writer.main:panels_entrypoint',
+            'ascitest = writer.main:ascii_entrypoint',
         ],
     },
     classifiers=[
