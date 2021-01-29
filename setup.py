@@ -30,6 +30,8 @@ setup(
         'console_scripts': [
             'paneltest = writer.main:panels_entrypoint',
             'maticstest = writer.main:matics_entrypoint',
+            'writer = writer.main:client_entrypoint',
+
         ],
     },
     classifiers=[
