@@ -1,13 +1,7 @@
-from asciimatics.effects import *
-from asciimatics.particles import *
 from asciimatics.widgets import Frame, TextBox, Layout, Label, Divider, Text, \
     CheckBox, RadioButtons, Button, PopUpDialog
-from asciimatics.scene import Scene
-from asciimatics.screen import Screen
-from asciimatics.exceptions import ResizeScreenError, NextScene, StopApplication, \
-    InvalidFields
+from asciimatics.exceptions import NextScene, StopApplication, InvalidFields
 
-import sys
 import re
 
 # Initial data for the form
