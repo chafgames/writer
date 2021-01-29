@@ -29,7 +29,7 @@ setup(
     entry_points={
         'console_scripts': [
             'paneltest = writer.main:panels_entrypoint',
-            'asciitest = writer.main:ascii_entrypoint',
+            'maticstest = writer.main:matics_entrypoint',
         ],
     },
     classifiers=[
