@@ -143,6 +143,11 @@ class MiniMap(Effect):
         # Nothing special to do.  Just need this to satisfy the ABC.
         pass
 
+    def regiser_scene(self, scene):
+        # Nothing special to do.  Just need this to satisfy the ABC.
+        pass
+    
+
 
 class RayCaster(Effect):
     """
@@ -323,6 +328,10 @@ class RayCaster(Effect):
         # No animation required.
         return 0
 
+    def regiser_scene(self, scene):
+        # Nothing special to do.  Just need this to satisfy the ABC.
+        pass
+
     @property
     def stop_frame(self):
         # No specific end point for this Effect.  Carry on running forever.
@@ -342,6 +351,9 @@ class GameController(Scene):
     """
 
     def __init__(self, screen, game_state):
+        self.safe_to_default_unhandled_input = False
+        self.delete_count = None
+        # self.frame_update_count = 0
         self._screen = screen
         self._state = game_state
         self._mini_map = MiniMap(screen, self._state, self._screen.height // 4)
@@ -394,16 +406,10 @@ class GameController(Scene):
             # Ignore other types of events.
             return event
 
+    def register_scene(self, scene):
+        # Nothing special to do.  Just need this to satisfy the ABC.
+        pass
 
-def demo(screen, game_state):
-    screen.play([GameController(screen, game_state)], stop_on_resize=True)
-
-
-if __name__ == "__main__":
-    game_state = GameState()
-    while True:
-        try:
-            Screen.wrapper(demo, catch_interrupt=False, arguments=[game_state])
-            sys.exit(0)
-        except ResizeScreenError:
-            pass
+    def update(self, scene):
+        # Nothing special to do.  Just need this to satisfy the ABC.
+        return
