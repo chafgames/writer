@@ -167,7 +167,7 @@ class RayCaster(Effect):
                 letter = min(self._screen.height, int(self._screen.height / dist))
                 redList = [9, 52, 88, 124, 126, 131, 160, 167, 196, 202, 203, 204, 211]
                 colour, attr, bg = (choice(redList), 0, 0)
-                tile = self._state.map[map_y][map_x]
+                tile = STATE.map[map_y][map_x]
                 text = self._ALL_TEXTURES[tile][min(len(self._ALL_TEXTURES[tile]) - 1, int(2 * dist))]
 
                 # Now draw the wall segment
