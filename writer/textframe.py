@@ -18,7 +18,8 @@ class TextFrame(Frame):
                                         x=x, y=y,
                                         name=name,
                                         title=title,
-                                        has_border=has_border)
+                                        has_border=has_border,
+                                        can_scroll=False)
         self.set_theme('monochrome')
         layout = Layout([width])
         self.add_layout(layout)
