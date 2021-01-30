@@ -10,7 +10,8 @@ from asciimatics.exceptions import ResizeScreenError, StopApplication
 from asciimatics.screen import Screen
 from asciimatics.scene import Scene
 from asciimatics.widgets import PopUpDialog
-from random import randint, choice
+import string
+from random import choice
 
 import logging
 logging.basicConfig(filename='writer.log', encoding='utf-8', level=logging.INFO)
@@ -30,13 +31,13 @@ XXXXXXXXXXXXXXXX
 X              X
 X  X        X  X
 X  X  X     X  X
-X XXX X  XXXX  X
+XAXXX X  XXXX  X
 X XXX X XX    XX
-X X XXX    XXXXX
+XBX XXX    XXXXX
 X X XXX XXXXX  X
-XAX     X      X
+XCX     X      X
 X XXXXX   XXXXXX
-X              X
+XD E           X
 XXXXXXXXXXXXXX X
 """.strip().split("\n")
 
@@ -52,6 +53,7 @@ class GameState(object):
         self.map = LEVEL_MAP
         self.mode = 1
         self.show_mini_map = True
+        self.found_letters = []
 
     @property
     def map_x(self):
@@ -61,17 +63,32 @@ class GameState(object):
     def map_y(self):
         return int(floor(self.y))
 
+    def collide_letter(self, letter):
+        logging.info(f'Found letter {letter}')
+        logging.info(f'Map1 {self.map}')
+        self.found_letters.append(letter)
+        self.map = [x.replace(letter, ' ') for x in self.map]
+
+
     def safe_update_x(self, new_x):
         new_x += self.x
         if 0 <= self.y < len(self.map) and 0 <= new_x < len(self.map[0]):
-            if self.map[self.map_y][int(floor(new_x))] == "X":
+            tile = self.map[self.map_y][int(floor(new_x))]
+            if tile == "X":
+                return
+            if tile in string.ascii_uppercase:
+                self.collide_letter(tile)
                 return
         self.x = new_x
 
     def safe_update_y(self, new_y):
         new_y += self.y
         if 0 <= new_y < len(self.map) and 0 <= self.x < len(self.map[0]):
-            if self.map[int(floor(new_y))][self.map_x] == "X":
+            tile = self.map[int(floor(new_y))][self.map_x]
+            if tile  == "X":
+                return
+            if tile in string.ascii_uppercase:
+                self.collide_letter(tile)
                 return
         self.y = new_y
 
@@ -159,32 +176,32 @@ class RayCaster(Effect):
     # Textures to emulate h distance.
     _TEXTURES = "@&#$AHhwai;:. "
     _A_TEXTURES = "@Aa:.         "
-    _B_TEXTURES = "@Aa.          "
-    _C_TEXTURES = "@Aa.          "
-    _D_TEXTURES = "@Aa.          "
-    _E_TEXTURES = "@Aa.          "
-    _F_TEXTURES = "@Aa.          "
-    _G_TEXTURES = "@Aa.          "
-    _H_TEXTURES = "@Aa.          "
-    _I_TEXTURES = "@Aa.          "
-    _J_TEXTURES = "@Aa.          "
-    _K_TEXTURES = "@Aa.          "
-    _L_TEXTURES = "@Aa.          "
-    _M_TEXTURES = "@Aa.          "
-    _N_TEXTURES = "@Aa.          "
-    _O_TEXTURES = "@Aa.          "
-    _P_TEXTURES = "@Aa.          "
-    _Q_TEXTURES = "@Aa.          "
-    _R_TEXTURES = "@Aa.          "
-    _P_TEXTURES = "@Aa.          "
-    _S_TEXTURES = "@Aa.          "
-    _T_TEXTURES = "@Aa.          "
-    _U_TEXTURES = "@Aa.          "
-    _V_TEXTURES = "@Aa.          "
-    _W_TEXTURES = "@Aa.          "
-    _X_TEXTURES = "@Aa.          "
-    _Y_TEXTURES = "@Aa.          "
-    _Z_TEXTURES = "@Aa.          "
+    _B_TEXTURES = "ßBb:.         "
+    _C_TEXTURES = "©Cc:.         "
+    _D_TEXTURES = "@Dd:.         "
+    _E_TEXTURES = "€Ee;.         "
+    _F_TEXTURES = "@Ff:.         "
+    _G_TEXTURES = "@Gg:.         "
+    _H_TEXTURES = "@Hh:.         "
+    _I_TEXTURES = "@Ii:.         "
+    _J_TEXTURES = "@Jj:.         "
+    _K_TEXTURES = "@Kk:.         "
+    _L_TEXTURES = "@Ll:.         "
+    _M_TEXTURES = "@Mm:.         "
+    _N_TEXTURES = "NNn:.         "
+    _O_TEXTURES = "0Oo:.         "
+    _P_TEXTURES = "@Pp:.         "
+    _Q_TEXTURES = "@Qq:.         "
+    _R_TEXTURES = "@Rr:.         "
+    _P_TEXTURES = "@Pp:.         "
+    _S_TEXTURES = "$Ss:.         "
+    _T_TEXTURES = "@Tt:.         "
+    _U_TEXTURES = "@Uu:.         "
+    _V_TEXTURES = "@Vv:.         "
+    _W_TEXTURES = "@Ww:.         "
+    _X_TEXTURES = "@Xx:.         "
+    _Y_TEXTURES = "@Yy:.         "
+    _Z_TEXTURES = "@Zz:.         "
 
     # Controls for rendering - this is the relative size of the camera plane to the viewing vector.
     FOV = 0.66
