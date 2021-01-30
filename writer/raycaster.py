@@ -1,3 +1,5 @@
+import string
+
 from asciimatics.screen import Screen
 from asciimatics.effects import Effect
 from math import sin, cos, pi, copysign
@@ -12,33 +14,35 @@ class RayCaster(Effect):
     """
 
     # Textures to emulate h distance.
-    _TEXTURES = "@&#$AHhwai;:. "
-    _A_TEXTURES = "@Aa:.         "
-    _B_TEXTURES = "ßBb:.         "
-    _C_TEXTURES = "©Cc:.         "
-    _D_TEXTURES = "ÐDd:.         "
-    _E_TEXTURES = "€Ee;.         "
-    _F_TEXTURES = "FFf:.         "
-    _G_TEXTURES = "9Gg:.         "
-    _H_TEXTURES = "#Hh:.         "
-    _I_TEXTURES = "I!i:.         "
-    _J_TEXTURES = "J¿j:.         "
-    _K_TEXTURES = "KKk:.         "
-    _L_TEXTURES = "LLl:.         "
-    _M_TEXTURES = "MMm:.         "
-    _N_TEXTURES = "NNn:.         "
-    _O_TEXTURES = "0Oo:.         "
-    _P_TEXTURES = "¶Pp:.         "
-    _Q_TEXTURES = "ÓQq:.         "
-    _R_TEXTURES = "®Rr:.         "
-    _S_TEXTURES = "$Ss:.         "
-    _T_TEXTURES = "Tt±:.         "
-    _U_TEXTURES = "Uüu:.         "
-    _V_TEXTURES = "VVv:.         "
-    _W_TEXTURES = "WWw:.         "
-    _X_TEXTURES = "Xx×:.         "
-    _Y_TEXTURES = "¥Yy:.         "
-    _Z_TEXTURES = "§Zz:.         "
+    _ALL_TEXTURES = {
+        '#': "@&#$AHhwai;:. ",
+        'A': "@Aa:.         ",
+        'B': "ßBb:.         ",
+        'C': "©Cc:.         ",
+        'D': "ÐDd:.         ",
+        'E': "€Ee;.         ",
+        'F': "FFf:.         ",
+        'G': "9Gg:.         ",
+        'H': "#Hh:.         ",
+        'I': "I!i:.         ",
+        'J': "J¿j:.         ",
+        'K': "KKk:.         ",
+        'L': "LLl:.         ",
+        'M': "MMm:.         ",
+        'N': "NNn:.         ",
+        'O': "0Oo:.         ",
+        'P': "¶Pp:.         ",
+        'Q': "ÓQq:.         ",
+        'R': "®Rr:.         ",
+        'S': "$Ss:.         ",
+        'T': "Tt±:.         ",
+        'U': "Uüu:.         ",
+        'V': "VVv:.         ",
+        'W': "WWw:.         ",
+        'X': "Xx×:.         ",
+        'Y': "¥Yy:.         ",
+        'Z': "§Zz:.         ",
+    }
 
     # Controls for rendering - this is the relative size of the camera plane to the viewing vector.
     FOV = 0.66
@@ -119,13 +123,13 @@ class RayCaster(Effect):
 
                 # Check whether the ray has now hit a wall.
                 if 0 <= map_x < len(self._state.map[0]) and 0 <= map_y < len(self._state.map):
-                    if self._state.map[map_y][map_x] == "X":
+                    if self._state.map[map_y][map_x] == "#":
                         hit = True
                         break
 
                 # Check whether the ray has now hit a letter.
                 if 0 <= map_x < len(self._state.map[0]) and 0 <= map_y < len(self._state.map):
-                    if self._state.map[map_y][map_x] == "A":
+                    if self._state.map[map_y][map_x] in string.ascii_uppercase:
                         hit_letter = True
                         break
 
@@ -138,7 +142,7 @@ class RayCaster(Effect):
                     dist = (map_x - self._state.x + (1 - step_x) / 2) / ray_x
                 wall = min(self._screen.height, int(self._screen.height / dist))
                 colour, attr, bg = self._colours[min(len(self._colours) - 1, int(3 * dist))]
-                text = self._TEXTURES[min(len(self._TEXTURES) - 1, int(2 * dist))]
+                text = self._ALL_TEXTURES['#'][min(len(self._ALL_TEXTURES['#']) - 1, int(2 * dist))]
 
                 # Now draw the wall segment
                 for sy in range(wall):
@@ -162,7 +166,8 @@ class RayCaster(Effect):
                 letter = min(self._screen.height, int(self._screen.height / dist))
                 redList = [9, 52, 88, 124, 126, 131, 160, 167, 196, 202, 203, 204, 211]
                 colour, attr, bg = (choice(redList), 0, 0)
-                text = self._A_TEXTURES[min(len(self._TEXTURES) - 1, int(2 * dist))]
+                tile = self._state.map[map_y][map_x]
+                text = self._ALL_TEXTURES[tile][min(len(self._ALL_TEXTURES[tile]) - 1, int(2 * dist))]
 
                 # Now draw the wall segment
                 for sy in range(letter):

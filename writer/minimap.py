@@ -33,7 +33,7 @@ class MiniMap(Effect):
                         0 <= px < len(self._state.map[0]) and self._state.map[py][px] != " "):
                     bg_colour = Screen.COLOUR_RED
                     fg_colour = Screen.COLOUR_WHITE
-                    pixel = self._state.map[py][px] if self._state.map[py][px] != 'X' else " "
+                    pixel = self._state.map[py][px] if self._state.map[py][px] != '#' else " "
                 else:
                     bg_colour = Screen.COLOUR_BLACK
                     fg_colour = Screen.COLOUR_BLACK

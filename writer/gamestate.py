@@ -3,18 +3,18 @@ import string
 import logging
 
 LEVEL_MAP = """
-XXXXXXXXXXXXXXXX
-X              X
-X  X        X  X
-X  X  X     X  X
-XAXXX X  XXXX  X
-X XXX X XX    XX
-XBX XXX    XXXXX
-X X XXX XXXXX  X
-XCX     X      X
-X XXXXX   XXXXXX
-XD E           X
-XXXXXXXXXXXXXX X
+################
+#              #
+#  #        #  #
+#  #  #     #  #
+#A### #  ####  #
+# ### # ##    ##
+#B# ###    #####
+# # ### #####  #
+#C#     #      #
+# #####   ######
+#D E           #
+############## #
 """.strip().split("\n")
 
 HELP = """
@@ -58,7 +58,7 @@ class GameState(object):
         new_x += self.x
         if 0 <= self.y < len(self.map) and 0 <= new_x < len(self.map[0]):
             tile = self.map[self.map_y][int(floor(new_x))]
-            if tile == "X":
+            if tile == "#":
                 return
             if tile in string.ascii_uppercase:
                 self.collide_letter(tile)
@@ -69,7 +69,7 @@ class GameState(object):
         new_y += self.y
         if 0 <= new_y < len(self.map) and 0 <= self.x < len(self.map[0]):
             tile = self.map[int(floor(new_y))][self.map_x]
-            if tile == "X":
+            if tile == "#":
                 return
             if tile in string.ascii_uppercase:
                 self.collide_letter(tile)
