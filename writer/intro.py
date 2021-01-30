@@ -1,21 +1,25 @@
+from writer.renderers import Dull
 from asciimatics.scene import Scene
-from asciimatics.effects import Stars, Print
+from asciimatics.effects import Print
+from asciimatics.particles import Rain
 from asciimatics.renderers import FigletText, Rainbow
 
 
 class Intro(Scene):
-    def __init__(self, screen):
-        super().__init__(effects=[], duration=300, clear=True, name='Intro')
+    def __init__(self, screen, effects=[], duration=300, clear=True, name='Intro'):
+        super().__init__(effects, duration, clear, name)
         self._screen = screen
 
 
     def reset(self, old_scene=None, screen=None):
         centre = (self._screen.width // 2, self._screen.height // 2)
         effects = [
-            Stars(screen, (screen.width + screen.height) // 2, start_frame=0),
+            # Stars(screen, (screen.width + screen.height) // 2, start_frame=0),
+            Rain(screen, self.duration),
             Print(screen,
-                FigletText("""I’m afraid sometimes you’ll play lonely games too, games you can’t win because
-                you’ll play against you."""),
+                Dull(screen, FigletText("""“But the biggest thing that has happened in the world in my life, in our lives, is this: 
+                By the grace of God, America won the Cold War.”""",
+                        font='smslant', width=150)),
                 x=centre[0]-100, y=centre[1]-20,
                 clear=True,
                 start_frame=0,
