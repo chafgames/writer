@@ -55,9 +55,9 @@ class GameController(Scene):
             if c in (ord("x"), ord("X")):
                 raise StopApplication("User exit")
             elif c in (ord("a"), Screen.KEY_LEFT):
-                STATE.safe_update_angle(-pi / 22.5)
+                STATE.safe_update_angle(-pi / 12.25)
             elif c in (ord("d"), Screen.KEY_RIGHT):
-                STATE.safe_update_angle(pi / 22.5)
+                STATE.safe_update_angle(pi / 12.25)
             elif c in (ord("w"), Screen.KEY_UP):
                 STATE.safe_update_x(cos(STATE.player_angle) / 5)
                 STATE.safe_update_y(sin(STATE.player_angle) / 5)

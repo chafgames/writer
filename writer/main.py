@@ -2,6 +2,9 @@ from writer.foundtext import FoundText
 from writer.gamecontroller import GameController
 from writer.intro import Intro
 from writer.intro2 import Intro2
+from writer.title import Title
+from writer.bar import Bar
+from writer.foundtext import FoundText
 from writer.levels import LEVEL_MAPS
 from writer.maze import make_maze, add_word
 from writer.credits import Credits
@@ -32,6 +35,8 @@ def run(screen):
     screen.width = 160
     scenes.append(Intro(screen))
     scenes.append(Intro2(screen))
+    scenes.append(Title(screen))
+    scenes.append(Bar(screen))
 
     L1 = 'TOM'
     maze = make_maze(3, 3)
