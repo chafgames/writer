@@ -1,4 +1,5 @@
-from writer import writer2
+from writer.gamestate import GameState
+from writer.gamecontroller import GameController
 
 from asciimatics.screen import Screen
 from asciimatics.exceptions import ResizeScreenError
@@ -7,7 +8,7 @@ import sys
 
 
 def client_entrypoint():
-    game_state = writer2.GameState()
+    game_state = GameState()
     while True:
         try:
             Screen.wrapper(run, catch_interrupt=False, arguments=[game_state])
@@ -17,4 +18,4 @@ def client_entrypoint():
 
 
 def run(screen, game_state):
-    screen.play([writer2.GameController(screen, game_state)], stop_on_resize=True)
+    screen.play([GameController(screen, game_state)], stop_on_resize=True)
