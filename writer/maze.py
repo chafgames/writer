@@ -21,7 +21,31 @@ def make_maze(w = 16, h = 8):
     maze = ""
     for (a, b) in zip(hor, ver):
         maze += ''.join(a + ['\n'] + b + ['\n'])
-    return maze.split('\n')
+    maze = maze.split('\n')
+    maze = [x for x in maze if x != '']
+    return maze
  
+
+def add_word(maze, word='TESTICLES'):
+    x = len(maze[0])
+    y = len(maze)
+    for letter in word:
+        added = False
+        while not added:
+            rx = randrange(x)
+            ry = randrange(y)
+            print(rx, ry)
+            if maze[ry][rx] == ' ':
+                print(letter)
+                tmp = list(maze[ry])
+                tmp[rx] = letter
+                maze[ry] = ''.join(tmp)
+                added = True
+    return maze
+
+
 if __name__ == '__main__':
-    print(make_maze())
+    maze = make_maze()
+    print('\n'.join(maze))
+    print('\n'.join(add_word(maze)))
+
