@@ -22,6 +22,8 @@ def client_entrypoint():
 
 def run(screen):
     scenes = []
+    screen.height = 48
+    screen.width = 160
     scenes.append(Intro(screen))
     scenes.append(GameController(screen))
 
