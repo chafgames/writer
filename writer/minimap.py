@@ -1,6 +1,7 @@
 from asciimatics.screen import Screen
 from asciimatics.effects import Effect
-from math import sin, cos, pi, copysign, floor
+from math import pi
+
 
 class MiniMap(Effect):
     """
@@ -24,7 +25,7 @@ class MiniMap(Effect):
 
     def _update(self, _):
         # Draw the miniature map.
-        for mx in range(self._size  * 2):
+        for mx in range(self._size * 2):
             for my in range(self._size):
                 px = self._state.map_x + mx - self._size // 2
                 py = self._state.map_y + my - self._size // 2
@@ -65,4 +66,3 @@ class MiniMap(Effect):
     def regiser_scene(self, scene):
         # Nothing special to do.  Just need this to satisfy the ABC.
         pass
-    

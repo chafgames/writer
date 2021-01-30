@@ -1,12 +1,16 @@
 from asciimatics.scene import Scene
 from asciimatics.screen import Screen
 from asciimatics.event import KeyboardEvent
+from asciimatics.exceptions import StopApplication
+from asciimatics.widgets import PopUpDialog
 
-from math import sin, cos, pi, copysign, floor
+from math import sin, cos, pi
 
 from writer.minimap import MiniMap
 from writer.raycaster import RayCaster
 from writer.textframe import TextFrame
+from writer.gamestate import HELP
+
 
 class GameController(Scene):
     """
@@ -28,9 +32,9 @@ class GameController(Scene):
         effects = [
             RayCaster(screen, self._state),
             TextFrame(screen, height=screen.height, width=frame_width, data={'text': 'This is the left frame'},
-                    x=0, y=0, name='LEFT', title='LEFT_FRAME'),
+                      x=0, y=0, name='LEFT', title='LEFT_FRAME'),
             TextFrame(screen, height=screen.height, width=frame_width, data={'text': 'This is the right frame'},
-                    x=right_frame_xpos, y=0, name='RIGHT', title='RIGHT_FRAME'),
+                      x=right_frame_xpos, y=0, name='RIGHT', title='RIGHT_FRAME'),
             self._mini_map,
         ]
         super(GameController, self).__init__(effects, -1)

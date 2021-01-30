@@ -1,7 +1,8 @@
 from asciimatics.screen import Screen
 from asciimatics.effects import Effect
-from math import sin, cos, pi, copysign, floor
+from math import sin, cos, pi, copysign
 from random import choice
+
 
 class RayCaster(Effect):
     """
@@ -150,7 +151,6 @@ class RayCaster(Effect):
                     last_side = hit_side
                     for sy in range(wall):
                         self._screen.print_at("|", sx, (self._screen.height - wall) // 2 + sy, 0, bg=0)
-
 
             # Draw letter if needed.
             if hit_letter:

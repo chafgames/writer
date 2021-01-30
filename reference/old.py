@@ -2,7 +2,7 @@
 
 # -*- coding: utf-8 -*-
 import sys
-from math import sin, cos, pi, copysign, floor
+from math import sin, cos, pi, floor
 from asciimatics.effects import Effect
 from asciimatics.event import KeyboardEvent
 from asciimatics.exceptions import ResizeScreenError, StopApplication

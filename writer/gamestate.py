@@ -1,4 +1,4 @@
-from math import sin, cos, pi, copysign, floor
+from math import pi, floor
 import string
 import logging
 
@@ -25,7 +25,6 @@ Use the following keys:
 - X to quit
 - 1 or 2 to change rendering mode.
 """
-
 
 
 class GameState(object):
@@ -55,7 +54,6 @@ class GameState(object):
         self.found_letters.append(letter)
         self.map = [x.replace(letter, ' ') for x in self.map]
 
-
     def safe_update_x(self, new_x):
         new_x += self.x
         if 0 <= self.y < len(self.map) and 0 <= new_x < len(self.map[0]):
@@ -71,7 +69,7 @@ class GameState(object):
         new_y += self.y
         if 0 <= new_y < len(self.map) and 0 <= self.x < len(self.map[0]):
             tile = self.map[int(floor(new_y))][self.map_x]
-            if tile  == "X":
+            if tile == "X":
                 return
             if tile in string.ascii_uppercase:
                 self.collide_letter(tile)
