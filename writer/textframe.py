@@ -32,6 +32,4 @@ class TextFrame(Frame):
         self._update(frame_no)
         label = self._layouts[0]._columns[0][0]
         frameinfo = STATE.get_frame_by_name(self.name)
-        logger.debug(f"updating {self.name} with {frameinfo['text']}")
         label.text = frameinfo['text']
-        # import pdb; pdb.set_trace()

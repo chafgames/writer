@@ -48,9 +48,7 @@ class GameController(Scene):
 
         # If that didn't handle it, check for a key that this demo understands.
         if isinstance(event, KeyboardEvent):
-            logger.debug("process_event: keyboard pressed!")
             STATE.frames['left'] = {'text': f"{datetime.now().isoformat()}"}
-            logger.debug(f"left_framestate: {STATE.get_frame_by_name('left')}")
             c = event.key_code
             if c in (ord("x"), ord("X")):
                 raise StopApplication("User exit")
