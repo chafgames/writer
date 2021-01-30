@@ -1,7 +1,7 @@
 from writer.gamecontroller import GameController
 from writer.intro import Intro
 from writer.levels import LEVEL_MAPS
-from writer.maze import make_maze
+from writer.maze import make_maze, add_word
 
 from asciimatics.screen import Screen
 from asciimatics.exceptions import ResizeScreenError
@@ -29,11 +29,8 @@ def run(screen):
     scenes.append(Intro(screen))
 
     L1 = 'TOM'
-    logger.info(f"{L1} {LEVEL_MAPS[L1]}")
-    maze = make_maze()
-    maze_log = '\n'.join(maze)
-    logger.info(f"{L1} {maze_log}")
-    scenes.append(GameController(screen, L1, maze))
+    maze = make_maze(4, 4)
+    scenes.append(GameController(screen, L1, add_word(maze, word=L1)))
     # scenes.append(GameController(screen, L1, LEVEL_MAPS[L1]))
 
     L2 = 'ALIVE'
