@@ -19,7 +19,7 @@ class TextFrame(Frame):
                                         name=name,
                                         title=title,
                                         has_border=has_border)
-
+        self.set_theme('monochrome')
         layout = Layout([width])
         self.add_layout(layout)
         frameinfo = STATE.get_frame_by_name(self.name)
