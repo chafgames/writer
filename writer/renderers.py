@@ -6,6 +6,7 @@ class Dull(StaticRenderer):
     def __init__(self, screen, renderer):
         super(Dull, self).__init__()
         palette = [ 19, 20, 21, 25, 26, 27, 31, 32, 33 ]
+        palette = range(51, 255, 36)
                     
         for image in renderer.images:
             new_image = "" 
