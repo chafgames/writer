@@ -1,12 +1,13 @@
 # Untitled
 ## TODO
-[ ] paragraphs for scenes
-[ ] fit paragraphs to storybox
+[ ] paragraphs for levels
+[ ] |-> fit paragraphs to storybox
 [ ] additional "illustrative" scenes
-[ ] finishing word triggering next scene
-[ ] cheat keybinding(s) (next/previous)
+[x] finishing word triggering next scene
+[x] cheat keybinding(s) (next only)
 [ ] web server hacking to autologin as user
 [ ] build cloud server
-[ ] WE NEED A NAME FOR THE GAME!!
+[x] WE NEED A NAME FOR THE GAME!! -> THE WRITER...
 [ ] title screen
-[ ] credits scene
+[x] credits scene (+special thanks)
+[ ] new 
