@@ -2,6 +2,8 @@ from asciimatics.screen import Screen
 from asciimatics.effects import Effect
 from math import pi
 
+from writer.gamestate import STATE
+
 
 class MiniMap(Effect):
     """
@@ -16,9 +18,8 @@ class MiniMap(Effect):
         (5 * pi / 4, 7 * pi / 4, "^")
     ]
 
-    def __init__(self, screen, game_state, size=5):
+    def __init__(self, screen, size=5):
         super(MiniMap, self).__init__(screen)
-        self._state = game_state
         self._size = size
         self._x = self._screen.width - 2 * (self._size + 1)
         self._y = self._screen.height - (self._size + 1)
@@ -27,13 +28,13 @@ class MiniMap(Effect):
         # Draw the miniature map.
         for mx in range(self._size * 2):
             for my in range(self._size):
-                px = self._state.map_x + mx - self._size // 2
-                py = self._state.map_y + my - self._size // 2
-                if (0 <= py < len(self._state.map) and
-                        0 <= px < len(self._state.map[0]) and self._state.map[py][px] != " "):
+                px = STATE.map_x + mx - self._size // 2
+                py = STATE.map_y + my - self._size // 2
+                if (0 <= py < len(STATE.map) and
+                        0 <= px < len(STATE.map[0]) and STATE.map[py][px] != " "):
                     bg_colour = Screen.COLOUR_RED
                     fg_colour = Screen.COLOUR_WHITE
-                    pixel = self._state.map[py][px] if self._state.map[py][px] != 'X' else " "
+                    pixel = STATE.map[py][px] if STATE.map[py][px] != 'X' else " "
                 else:
                     bg_colour = Screen.COLOUR_BLACK
                     fg_colour = Screen.COLOUR_BLACK
@@ -43,7 +44,7 @@ class MiniMap(Effect):
         # Draw the player
         text = ">"
         for a, b, direction in self._DIRECTIONS:
-            if a < self._state.player_angle <= b:
+            if a < STATE.player_angle <= b:
                 text = direction
                 break
         self._screen.print_at(
