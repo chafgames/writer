@@ -23,7 +23,7 @@ class GameController(Scene):
     Drawing of the Scene is then handled in the usual way.
     """
 
-    def __init__(self, screen):
+    def __init__(self, screen, word, map):
         self.safe_to_default_unhandled_input = False
         self.delete_count = None
         # self.frame_update_count = 0
@@ -31,6 +31,8 @@ class GameController(Scene):
         self._mini_map = MiniMap(screen, self._screen.height // 4)
         frame_width = screen.width // 5
         right_frame_xpos = frame_width * 4
+        self.word = word
+        self.map = map
         effects = [
             RayCaster(screen),
             TextFrame(screen, height=screen.height, width=frame_width, data={},
@@ -41,10 +43,11 @@ class GameController(Scene):
         ]
         super(GameController, self).__init__(effects, -1)
 
+    def reset(self):
+        STATE.word = self.word
+        STATE.map = self.map
+
     def process_event(self, event):
-        # Allow standard event processing first
-        # if super(GameController, self).process_event(event) is None:
-        #     return
 
         # If that didn't handle it, check for a key that this demo understands.
         if isinstance(event, KeyboardEvent):
@@ -77,6 +80,9 @@ class GameController(Scene):
                 return event
         else:
             # Ignore other types of events.
+        # Allow standard event processing first
+            if super(GameController, self).process_event(event) is None:
+                return
             return event
 
     def register_scene(self, scene):
