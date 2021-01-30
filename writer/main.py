@@ -2,7 +2,6 @@ from writer.foundtext import FoundText
 from writer.gamecontroller import GameController
 from writer.intro import Intro
 from writer.intro2 import Intro2
-from writer.foundtext import FoundText
 from writer.levels import LEVEL_MAPS
 from writer.maze import make_maze, add_word
 from writer.credits import Credits
