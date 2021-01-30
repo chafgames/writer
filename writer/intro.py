@@ -1,9 +1,11 @@
 from writer.renderers import Dull
 from asciimatics.scene import Scene
 from asciimatics.effects import Print
+from asciimatics.event import KeyboardEvent
+
 from asciimatics.particles import Rain
 from asciimatics.renderers import FigletText, Rainbow
-
+from asciimatics.exceptions import NextScene
 
 class Intro(Scene):
     def __init__(self, screen, effects=[], duration=300, clear=True, name='Intro'):
@@ -38,3 +40,10 @@ When she’s hears the news she’s been waiting for, she falls into a coma, and
         ]
         for fx in effects:
             self.add_effect(fx)
+
+
+    def process_event(self, event):
+        super(Intro, self).process_event(event)
+        if isinstance(event, KeyboardEvent):
+            if event.key_code == 32:  # SPACE key
+                raise NextScene
