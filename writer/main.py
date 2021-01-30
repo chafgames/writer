@@ -1,5 +1,6 @@
 from writer.gamestate import GameState
 from writer.gamecontroller import GameController
+from writer.intro import Intro
 
 from asciimatics.screen import Screen
 from asciimatics.exceptions import ResizeScreenError
@@ -18,4 +19,10 @@ def client_entrypoint():
 
 
 def run(screen, game_state):
-    screen.play([GameController(screen, game_state)], stop_on_resize=True)
+    scenes = []
+    scenes.append(Intro(screen))
+    scenes.append(GameController(screen, game_state))
+
+    screen.refresh()
+
+    screen.play(scenes, stop_on_resize=True)
