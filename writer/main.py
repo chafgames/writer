@@ -2,6 +2,8 @@ from writer.gamecontroller import GameController
 from writer.intro import Intro
 from writer.levels import LEVEL_MAPS
 from writer.maze import make_maze
+from writer.credits import Credits
+from writer.thanks import Thanks
 
 from asciimatics.screen import Screen
 from asciimatics.exceptions import ResizeScreenError
@@ -38,6 +40,8 @@ def run(screen):
 
     L2 = 'ALIVE'
     scenes.append(GameController(screen, L2, LEVEL_MAPS[L2]))
+    scenes.append(Credits(screen))
+    scenes.append(Thanks(screen))
 
     screen.refresh()
 
