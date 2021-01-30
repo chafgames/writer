@@ -1,5 +1,7 @@
+from writer.foundtext import FoundText
 from writer.gamecontroller import GameController
 from writer.intro import Intro
+from writer.foundtext import FoundText
 from writer.levels import LEVEL_MAPS
 from writer.maze import make_maze, add_word
 
@@ -29,9 +31,10 @@ def run(screen):
     scenes.append(Intro(screen))
 
     L1 = 'TOM'
-    maze = make_maze(4, 4)
+    maze = make_maze(3, 3)
     scenes.append(GameController(screen, L1, add_word(maze, word=L1)))
     # scenes.append(GameController(screen, L1, LEVEL_MAPS[L1]))
+    scenes.append(FoundText(screen))
 
     L2 = 'ALIVE'
     scenes.append(GameController(screen, L2, LEVEL_MAPS[L2]))

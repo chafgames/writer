@@ -1,7 +1,7 @@
 from asciimatics.scene import Scene
 from asciimatics.screen import Screen
 from asciimatics.event import KeyboardEvent
-from asciimatics.exceptions import StopApplication
+from asciimatics.exceptions import StopApplication, NextScene
 from asciimatics.widgets import PopUpDialog
 
 from math import sin, cos, pi
@@ -75,6 +75,8 @@ class GameController(Scene):
                     self.remove_effect(self._mini_map)
             elif c in (ord("h"), ord("H")):
                 self.add_effect(PopUpDialog(self._screen, HELP, ["OK"]))
+            elif c == ord("0"):
+                raise NextScene
             else:
                 # Not a recognised key - pass on to other handlers.
                 return event

@@ -2,6 +2,8 @@ from math import pi, floor
 import string
 import logging
 
+from asciimatics.exceptions import NextScene
+
 LEVEL_MAP = """
 ################
 # YOU BROKE IT #
@@ -46,6 +48,8 @@ class GameState(object):
         logging.info(f'Map1 {self.map}')
         self.found_letters.append(letter)
         self.map = [x.replace(letter, ' ') for x in self.map]
+        if len(self.found_letters) == len(self.word):
+            raise NextScene
 
     def safe_update_x(self, new_x):
         new_x += self.x
