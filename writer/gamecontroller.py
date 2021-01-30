@@ -5,10 +5,10 @@ from asciimatics.exceptions import StopApplication
 from asciimatics.widgets import PopUpDialog
 
 from math import sin, cos, pi
-from datetime import datetime
 from writer.minimap import MiniMap
 from writer.raycaster import RayCaster
 from writer.textframe import TextFrame
+from writer.statusframe import StatusFrame
 from writer.gamestate import HELP, STATE
 
 import logging
@@ -36,9 +36,9 @@ class GameController(Scene):
         effects = [
             RayCaster(screen),
             TextFrame(screen, height=screen.height, width=frame_width, data={},
-                      x=0, y=0, name='left', title='LEFT'),
-            TextFrame(screen, height=screen.height, width=frame_width, data={},
-                      x=right_frame_xpos, y=0, name='right', title='RIGHT'),
+                      x=0, y=0, name='text', title='story'),
+            StatusFrame(screen, height=screen.height, width=frame_width, data={},
+                        x=right_frame_xpos, y=0, name='status', title='status'),
             self._mini_map,
         ]
         super(GameController, self).__init__(effects, -1)
@@ -51,7 +51,6 @@ class GameController(Scene):
 
         # If that didn't handle it, check for a key that this demo understands.
         if isinstance(event, KeyboardEvent):
-            STATE.frames['left'] = {'text': f"{datetime.now().isoformat()}"}
             c = event.key_code
             if c in (ord("x"), ord("X")):
                 raise StopApplication("User exit")
