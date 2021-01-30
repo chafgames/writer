@@ -5,6 +5,8 @@ from asciimatics.effects import Effect
 from math import sin, cos, pi, copysign
 from random import choice
 
+from writer.gamestate import STATE
+
 
 class RayCaster(Effect):
     """
@@ -47,9 +49,8 @@ class RayCaster(Effect):
     # Controls for rendering - this is the relative size of the camera plane to the viewing vector.
     FOV = 0.66
 
-    def __init__(self, screen, game_state):
+    def __init__(self, screen):
         super(RayCaster, self).__init__(screen)
-        self._state = game_state
         self._block_size = screen.height // 3
         if screen.colours >= 256:
             self._colours = [x for x in zip(range(255, 232, -1), [0] * 24, range(255, 232, -1))]
@@ -73,15 +74,15 @@ class RayCaster(Effect):
         last_side = None
         for sx in range(0, self._screen.width, 2):
             # Calculate the ray for this vertical slice.
-            camera_x = cos(self._state.player_angle + pi / 2) * self.FOV
-            camera_y = sin(self._state.player_angle + pi / 2) * self.FOV
+            camera_x = cos(STATE.player_angle + pi / 2) * self.FOV
+            camera_y = sin(STATE.player_angle + pi / 2) * self.FOV
             camera_segment = 2 * sx / self._screen.width - 1
-            ray_x = cos(self._state.player_angle) + camera_x * camera_segment
-            ray_y = sin(self._state.player_angle) + camera_y * camera_segment
+            ray_x = cos(STATE.player_angle) + camera_x * camera_segment
+            ray_y = sin(STATE.player_angle) + camera_y * camera_segment
 
             # Representation of the ray within our map
-            map_x = self._state.map_x
-            map_y = self._state.map_y
+            map_x = STATE.map_x
+            map_y = STATE.map_y
             hit = False
             hit_side = False
             hit_letter = False
@@ -101,14 +102,14 @@ class RayCaster(Effect):
             # logical scale as the previous ratios).
             step_x = int(copysign(1, ray_x))
             step_y = int(copysign(1, ray_y))
-            side_x = (self._state.x - map_x) if ray_x < 0 else (map_x + 1.0 - self._state.x)
+            side_x = (STATE.x - map_x) if ray_x < 0 else (map_x + 1.0 - STATE.x)
             side_x *= ratio_to_x
-            side_y = (self._state.y - map_y) if ray_y < 0 else (map_y + 1.0 - self._state.y)
+            side_y = (STATE.y - map_y) if ray_y < 0 else (map_y + 1.0 - STATE.y)
             side_y *= ratio_to_y
 
             # Give up if we'll never intersect the map
-            while (((step_x < 0 and map_x >= 0) or (step_x > 0 and map_x < len(self._state.map[0]))) and
-                   ((step_y < 0 and map_y >= 0) or (step_y > 0 and map_y < len(self._state.map)))):
+            while (((step_x < 0 and map_x >= 0) or (step_x > 0 and map_x < len(STATE.map[0]))) and
+                   ((step_y < 0 and map_y >= 0) or (step_y > 0 and map_y < len(STATE.map)))):
                 # Move along the ray to the next nearest side (measured in distance along the ray).
                 if side_x < side_y:
                     side_x += ratio_to_x
@@ -122,14 +123,14 @@ class RayCaster(Effect):
                     hit_letter_side = True
 
                 # Check whether the ray has now hit a wall.
-                if 0 <= map_x < len(self._state.map[0]) and 0 <= map_y < len(self._state.map):
-                    if self._state.map[map_y][map_x] == "#":
+                if 0 <= map_x < len(STATE.map[0]) and 0 <= map_y < len(STATE.map):
+                    if STATE.map[map_y][map_x] == "#":
                         hit = True
                         break
 
                 # Check whether the ray has now hit a letter.
-                if 0 <= map_x < len(self._state.map[0]) and 0 <= map_y < len(self._state.map):
-                    if self._state.map[map_y][map_x] in string.ascii_uppercase:
+                if 0 <= map_x < len(STATE.map[0]) and 0 <= map_y < len(STATE.map):
+                    if STATE.map[map_y][map_x] in string.ascii_uppercase:
                         hit_letter = True
                         break
 
@@ -137,9 +138,9 @@ class RayCaster(Effect):
             if hit:
                 # Figure out textures and colours to use based on the distance to the wall.
                 if hit_side:
-                    dist = (map_y - self._state.y + (1 - step_y) / 2) / ray_y
+                    dist = (map_y - STATE.y + (1 - step_y) / 2) / ray_y
                 else:
-                    dist = (map_x - self._state.x + (1 - step_x) / 2) / ray_x
+                    dist = (map_x - STATE.x + (1 - step_x) / 2) / ray_x
                 wall = min(self._screen.height, int(self._screen.height / dist))
                 colour, attr, bg = self._colours[min(len(self._colours) - 1, int(3 * dist))]
                 text = self._ALL_TEXTURES['#'][min(len(self._ALL_TEXTURES['#']) - 1, int(2 * dist))]
@@ -148,7 +149,7 @@ class RayCaster(Effect):
                 for sy in range(wall):
                     self._screen.print_at(
                         text * 2, sx, (self._screen.height - wall) // 2 + sy,
-                        colour, attr, bg=0 if self._state.mode == 1 else bg)
+                        colour, attr, bg=0 if STATE.mode == 1 else bg)
 
                 # Draw a line when we change surfaces to help make it easier to see the 3d effect
                 if hit_side != last_side:
@@ -160,9 +161,9 @@ class RayCaster(Effect):
             if hit_letter:
                 # Figure out textures and colours to use based on the distance to the wall.
                 if hit_letter_side:
-                    dist = (map_y - self._state.y + (1 - step_y) / 2) / ray_y
+                    dist = (map_y - STATE.y + (1 - step_y) / 2) / ray_y
                 else:
-                    dist = (map_x - self._state.x + (1 - step_x) / 2) / ray_x
+                    dist = (map_x - STATE.x + (1 - step_x) / 2) / ray_x
                 letter = min(self._screen.height, int(self._screen.height / dist))
                 redList = [9, 52, 88, 124, 126, 131, 160, 167, 196, 202, 203, 204, 211]
                 colour, attr, bg = (choice(redList), 0, 0)
@@ -173,7 +174,7 @@ class RayCaster(Effect):
                 for sy in range(letter):
                     self._screen.print_at(
                         text * 2, sx, (self._screen.height - letter) // 2 + sy,
-                        colour, attr, bg=0 if self._state.mode == 1 else bg)
+                        colour, attr, bg=0 if STATE.mode == 1 else bg)
 
                 # Draw a line when we change surfaces to help make it easier to see the 3d effect
                 if hit_letter_side != last_side:

@@ -39,6 +39,8 @@ class GameState(object):
         self.mode = 1
         self.show_mini_map = True
         self.found_letters = []
+        self.frames = {'right': {'text': 'THIS IS THE RIGHT TEXT'},
+                       'left': {'text': 'THIS IS THE LEFT TEXT'}}
 
     @property
     def map_x(self):
@@ -82,3 +84,12 @@ class GameState(object):
             self.player_angle += 2 * pi
         if self.player_angle > 2 * pi:
             self.player_angle -= 2 * pi
+
+    def get_frame_by_name(self, name):
+        try:
+            return self.frames[name]
+        except Exception:
+            return None
+
+
+STATE = GameState()
