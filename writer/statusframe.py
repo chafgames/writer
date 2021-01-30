@@ -35,16 +35,13 @@ class StatusFrame(Frame):
 
     def get_blanked_word(self):
         blanked = []
-        logger.debug(f"BLANKED: found: {STATE.found_letters}")
         for char in STATE.word:
             if char == ' ':
                 blanked.append('/')
             elif char.upper() in STATE.found_letters:
-                logger.debug(f"BLANKED: appending: {char}")
                 blanked.append(char)
             else:
                 blanked.append('_')
-        logger.debug(f"BLANKED: full: {blanked}")
         return ''.join(blanked)
 
     def update(self, frame_no):
