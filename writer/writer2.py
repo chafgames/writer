@@ -359,8 +359,8 @@ class GameController(Scene):
 
     def process_event(self, event):
         # Allow standard event processing first
-        if super(GameController, self).process_event(event) is None:
-            return
+        # if super(GameController, self).process_event(event) is None:
+        #     return
 
         # If that didn't handle it, check for a key that this demo understands.
         if isinstance(event, KeyboardEvent):
