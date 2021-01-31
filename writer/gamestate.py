@@ -35,7 +35,7 @@ class GameState(object):
         self.found_letters = []
         self.frames = {'status': {'text': 'this is where the game state will go!'},
                        'text': {'text': 'this is where the long text will go!'}}
-        self.word = 'abc def ghi abc def gh i'
+        self.word = ''
 
     @property
     def map_x(self):
