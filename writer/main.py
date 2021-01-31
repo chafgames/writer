@@ -4,6 +4,7 @@ from writer.intro import Intro
 from writer.intro2 import Intro2
 from writer.title import Title
 from writer.bar import Bar
+from writer.car import Car
 from writer.levels import LEVEL_MAPS
 from writer.maze import make_maze, add_word
 from writer.credits import Credits
@@ -49,6 +50,8 @@ def run(screen):
 
     L2 = 'ALIVE'
     scenes.append(GameController(screen, L2, LEVEL_MAPS[L2], name='L2'))
+
+    scenes.append(Car(screen))
 
     L3 = 'CAR'
     scenes.append(GameController(screen, L3, add_word(LEVEL_MAPS[L3], L3), car=True, name='L3'))
