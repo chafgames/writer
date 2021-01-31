@@ -6,3 +6,5 @@ from .gamecontroller import *  # noqa: F401,F403
 from .gamestate import *  # noqa: F401,F403
 from .raycaster import *  # noqa: F401,F403
 from .minimap import *  # noqa: F401,F403
+from .credits import *  # noqa: F401,F403
+from .thanks import *  # noqa: F401,F403

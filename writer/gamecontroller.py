@@ -86,7 +86,7 @@ class GameController(Scene):
                 return event
         else:
             # Ignore other types of events.
-        # Allow standard event processing first
+            # Allow standard event processing first
             if super(GameController, self).process_event(event) is None:
                 return
             return event

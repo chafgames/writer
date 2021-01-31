@@ -7,6 +7,8 @@ from writer.bar import Bar
 from writer.foundtext import FoundText
 from writer.levels import LEVEL_MAPS
 from writer.maze import make_maze, add_word
+from writer.credits import Credits
+from writer.thanks import Thanks
 
 from asciimatics.screen import Screen
 from asciimatics.exceptions import ResizeScreenError
@@ -43,6 +45,8 @@ def run(screen):
 
     L2 = 'ALIVE'
     scenes.append(GameController(screen, L2, LEVEL_MAPS[L2]))
+    scenes.append(Credits(screen))
+    scenes.append(Thanks(screen))
 
     L3 = 'CAR'
     scenes.append(GameController(screen, L3, add_word(LEVEL_MAPS[L3], L3), car=True, name='L3'))
