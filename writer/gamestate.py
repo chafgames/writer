@@ -35,7 +35,8 @@ class GameState(object):
         self.found_letters = []
         self.frames = {'frame_L1': {'text': 'I\'m... looking for someone?'},
                        'frame_L2': {'text': 'this is L2 Story'},
-                       'frame_L3': {'text': 'this is L3 Story'}}
+                       'frame_L3': {'text': 'this is L3 Story'},
+                       'frame_L4': {'text': 'this is L4Story'}}
         self.word = ''
 
     @property
