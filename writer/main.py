@@ -12,6 +12,7 @@ from writer.credits import Credits
 from writer.thanks import Thanks
 from writer.prompt import Prompt
 from writer.image import Image
+from writer.plaintext import PlainText
 from writer import constants
 
 from asciimatics.screen import Screen
@@ -36,6 +37,7 @@ def run(screen):
     scenes = []
     screen.height = 48
     screen.width = 160
+
     scenes.append(Image(screen, name='Intro', imagetext=constants.intro_text, imagefile='globe.gif'))
     # scenes.append(Intro(screen))
     scenes.append(Intro2(screen))
@@ -86,7 +88,8 @@ def run(screen):
                          closing_scenes=[constants.car_boot_button_1_jump_to,
                                          constants.car_boot_button_2_jump_to,
                                          constants.car_boot_button_3_jump_to]))
-    scenes.append(Image(screen, name='flag', imagetext=constants.flag_text, imagefile='flag.gif'))
+    scenes.append(Image(screen, name='flag', imagetext=constants.flag_text, imagefile='flag.gif', font='straight'))
+    scenes.append(PlainText(screen, name='flagtext', text=constants.flag_text, font='straight'))
 
     scenes.append(IronCurtain(screen))
     # TODO :new prompt (mirror)
