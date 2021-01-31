@@ -23,7 +23,7 @@ class GameController(Scene):
     Drawing of the Scene is then handled in the usual way.
     """
 
-    def __init__(self, screen, word, map, name='GameController'):
+    def __init__(self, screen, word, map, car=False, name='GameController'):
         self.safe_to_default_unhandled_input = False
         self.delete_count = None
         # self.frame_update_count = 0
@@ -33,6 +33,7 @@ class GameController(Scene):
         right_frame_xpos = frame_width * 4
         self.word = word
         self.map = map
+        self.car = car
         effects = [
             RayCaster(screen),
             TextFrame(screen, height=screen.height, width=frame_width, data={},
@@ -46,6 +47,7 @@ class GameController(Scene):
     def reset(self):
         STATE.word = self.word
         STATE.map = self.map
+        STATE.car = self.car
 
     def process_event(self, event):
 
@@ -55,9 +57,9 @@ class GameController(Scene):
             if c in (ord("x"), ord("X")):
                 raise StopApplication("User exit")
             elif c in (ord("a"), Screen.KEY_LEFT):
-                STATE.safe_update_angle(-pi / 22.5)
+                STATE.safe_update_angle(-pi / 12.25)
             elif c in (ord("d"), Screen.KEY_RIGHT):
-                STATE.safe_update_angle(pi / 22.5)
+                STATE.safe_update_angle(pi / 12.25)
             elif c in (ord("w"), Screen.KEY_UP):
                 STATE.safe_update_x(cos(STATE.player_angle) / 5)
                 STATE.safe_update_y(sin(STATE.player_angle) / 5)

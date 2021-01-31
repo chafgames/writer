@@ -29,7 +29,8 @@ class GameState(object):
         self.player_angle = pi / 2
         self.x, self.y = 1.5, 1.5
         self.map = LEVEL_MAP
-        self.mode = 1
+        self.car = False
+        self.mode = 2
         self.show_mini_map = True
         self.found_letters = []
         self.frames = {'status': {'text': 'this is where the game state will go!'},
