@@ -62,6 +62,9 @@ def run(screen):
                                          constants.stranger_convo_button_2_jump_to,
                                          constants.stranger_convo_button_3_jump_to]))
 
+    scenes.append(Car(screen, name='car'))
+    L3 = 'CAR'
+    scenes.append(GameController(screen, L3, add_word(LEVEL_MAPS[L3], L3), car=True, name='L3'))
     scenes.append(Prompt(screen, name='car_boot', title='',
                          prompt=constants.car_boot_prompt,
                          buttons=[constants.car_boot_button_1_text,
@@ -74,19 +77,13 @@ def run(screen):
                                          constants.car_boot_button_2_jump_to,
                                          constants.car_boot_button_3_jump_to]))
 
-    L1 = 'TOM'
-    maze = make_maze(3, 3)
-    scenes.append(GameController(screen, L1, add_word(maze, word=L1), name='L1'))
-    scenes.append(FoundText(screen))
+    # L1 = 'TOM'
+    # maze = make_maze(3, 3)
+    # scenes.append(GameController(screen, L1, add_word(maze, word=L1), name='L1'))
+    # scenes.append(FoundText(screen))
 
-    L2 = 'ALIVE'
-    scenes.append(GameController(screen, L2, LEVEL_MAPS[L2], name='L2'))
-
-    scenes.append(Car(screen, name='car'))
-
-    L3 = 'CAR'
-    scenes.append(GameController(screen, L3, add_word(LEVEL_MAPS[L3], L3), car=True, name='L3'))
-    scenes.append(GameController(screen, L3, LEVEL_MAPS[L3], car=True, name='L3'))
+    # L2 = 'ALIVE'
+    # scenes.append(GameController(screen, L2, LEVEL_MAPS[L2], name='L2'))
 
     L4 = 'CHAUFFEUR'
     scenes.append(GameController(screen, L4, add_word(make_maze(6, 6)), name='L4'))

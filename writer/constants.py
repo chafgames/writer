@@ -1,6 +1,6 @@
 from pkg_resources import resource_string
 
-bar_order_prompt = f"{resource_string('writer.art', 'restaurant').decode('utf-8')}\n What should you order at the bar for the stranger?"
+bar_order_prompt = f"{resource_string('writer.art', 'restaurant').decode('utf-8')}\nWhat should you order at the bar for the stranger?"
 bar_order_button_1_text = 'Black Coffee'
 bar_order_button_1_resp = 'The bartender shrugs as you bring the coffee over to the stranger.'
 bar_order_button_1_jump_to = 'stranger_convo'
@@ -34,13 +34,15 @@ stranger_convo_button_3_jump_to = 'L1'
 stranger_convo_button_3_resp = "There doesn't seem to be anything amiss here, just another part of the scenery on this rain-soaked street."
 stranger_convo_button_3_jump_to = 'stranger_convo'     # TODO
 
-car_boot_prompt = """The sound is like the lock turning in a Stasi cell. But there’s another noise, something soft and gentle, yet it cuts through the chug of diesel engines and snapping riles. Everything is dark, but that sound, that voice… it sounds like light.
+car_boot_prompt = f"""
+The sound is like the lock turning in a Stasi cell. But there’s another noise, something soft and gentle, yet it cuts through the chug of diesel engines and snapping riles. Everything is dark, but that sound, that voice… it sounds like light.
 
 But there’s another sound. Something terrifying, though she’s been told to expect it...
 ...Three taps on the outside of the trunk.
 ...A Stasi guard...
 
-The letter gave her instructions, but what was she supposed to do?"""
+The letter gave her instructions, but what was she supposed to do?
+{resource_string('writer.art', 'guard_scene').decode('utf-8')}"""
 car_boot_button_1_text = 'Open the trunk'
 car_boot_button_1_resp = "car_boot_resp_1_here"  # TODO
 car_boot_button_1_jump_to = 'car_boot'  # TODO
