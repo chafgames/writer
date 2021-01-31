@@ -37,6 +37,11 @@ def run(screen):
     scenes.append(Intro(screen))
     scenes.append(Intro2(screen))
     scenes.append(Title(screen))
+    L1 = 'TOM'
+    maze = make_maze(3, 3)
+    scenes.append(GameController(screen, L1, add_word(maze, word=L1), name='L1'))
+    scenes.append(FoundText(screen))
+
     scenes.append(Bar(screen))
 
     scenes.append(Prompt(screen, name='bar_order', title='',
@@ -76,18 +81,15 @@ def run(screen):
                          closing_scenes=[constants.car_boot_button_1_jump_to,
                                          constants.car_boot_button_2_jump_to,
                                          constants.car_boot_button_3_jump_to]))
-
-    # L1 = 'TOM'
-    # maze = make_maze(3, 3)
-    # scenes.append(GameController(screen, L1, add_word(maze, word=L1), name='L1'))
-    # scenes.append(FoundText(screen))
-
-    # L2 = 'ALIVE'
-    # scenes.append(GameController(screen, L2, LEVEL_MAPS[L2], name='L2'))
-
+    # TODO: image scene here
     L4 = 'CHAUFFEUR'
     maze = make_maze(6, 6)
     scenes.append(GameController(screen, L4, add_word(maze, word=L4), name='L4'))
+
+    # TODO: FINAL SCENE
+    # L2 = 'ALIVE'
+    # scenes.append(GameController(screen, L2, LEVEL_MAPS[L2], name='L2'))
+
 
     scenes.append(Credits(screen))
     scenes.append(Thanks(screen))
