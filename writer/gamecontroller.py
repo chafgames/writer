@@ -38,9 +38,9 @@ class GameController(Scene):
         effects = [
             RayCaster(screen),
             TextFrame(screen, height=screen.height, width=frame_width, data={},
-                      x=0, y=0, name=f"frame_{name}", title='story'),
+                      x=0, y=0, name=f"frame_{name}", title=''),
             StatusFrame(screen, height=screen.height, width=frame_width, data={},
-                        x=right_frame_xpos, y=0, name='status', title='status'),
+                        x=right_frame_xpos, y=0, name='status', title=''),
             self._mini_map,
         ]
         super(GameController, self).__init__(effects, -1, name=name)

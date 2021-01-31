@@ -26,7 +26,7 @@ class StatusFrame(Frame):
 
         # frameinfo = STATE.get_frame_by_name(self.name)
         # STATE.word
-        layout.add_widget(Label("word:", height=1))
+        layout.add_widget(Label("", height=1))
 
         layout.add_widget(Label(self.get_blanked_word(), height=height))
         # layout.add_widget(WrappedText(f"{self.name}", dummydata['text'], width))
