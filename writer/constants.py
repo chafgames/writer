@@ -1,4 +1,6 @@
-bar_order_prompt = 'What should you order at the bar for the stranger?'
+from pkg_resources import resource_string
+
+bar_order_prompt = f"{resource_string('writer.art', 'restaurant').decode('utf-8')}\n What should you order at the bar for the stranger?"
 bar_order_button_1_text = 'Black Coffee'
 bar_order_button_1_resp = 'The bartender shrugs as you bring the coffee over to the stranger.'
 bar_order_button_1_jump_to = 'stranger_convo'
