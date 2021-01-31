@@ -8,6 +8,6 @@
 [ ] web server hacking to autologin as user
 [ ] build cloud server
 [x] WE NEED A NAME FOR THE GAME!! -> THE WRITER...
-[ ] title screen
+[x] title screen
 [x] credits scene (+special thanks)
 [ ] new 
