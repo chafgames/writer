@@ -8,6 +8,7 @@ from writer.car import Car
 from writer.captain import Captain
 from writer.ironcurtain import IronCurtain
 from writer.wall import Wall
+from writer.river import River
 from writer.levels import LEVEL_MAPS
 from writer.maze import make_maze, add_word
 from writer.credits import Credits
@@ -119,7 +120,7 @@ def run(screen):
 
     scenes.append(Captain(screen))
     scenes.append(Wall(screen))
-    # scenes.append(Wall2(screen))
+    scenes.append(River(screen))
     scenes.append(Credits(screen))
     scenes.append(Thanks(screen))
 

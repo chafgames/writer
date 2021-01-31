@@ -92,3 +92,14 @@ The chauffeur! He stares into her eyes, his big and round and brown and terrifie
 pushes her down the riverbank. There’s a boat, as though he knew this was happening,
 as though he were waiting for her to run. How can he know her so well when they’ve never even shared a conversation?
 When he pushes her into the boat, he signals to someone high above. A spotlight winks off."""
+
+river_scene_story_text = """Tense minutes pass upon the river. There’s a clamour on the other side,
+and the spotlight flicks back on. It whips across the river, a predator’s frantic eye searching for its prey.
+The driver curses, puts two oars into the water and heaves. They’re almost at the bank when the bullets hit him.
+A hot spray of blood covers Jenny’s face, but she doesn’t scream. Instead, she takes the oars herself and
+pulls him to shore amid a hail of random gunfire.
+The Strasi are coming. Jenny tries to haul him up the bank, but he’s too heavy. Their eyes meet again and he
+pulls his pistol from his coat. When he pushes Jenny backwards, she doesn’t realise he’s sending her into the
+arms of a waiting Westerner. She screams as she’s pulled back up the bank, and the driver’s pistol sends
+bullets wailing into the dark. Over the noise and in the flash of a muzzle, she see’s him mouth a word,
+one Jenny has held to for over a decade."""
