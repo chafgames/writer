@@ -26,13 +26,13 @@ As you bring down the lid of the car's trunk with you inside, you hear the engin
 """
 stranger_convo_button_1_jump_to = 'car'
 stranger_convo_button_2_text = 'Speak to the doorman'
-stranger_convo_button_2_resp = "stranger_resp_2_here"
-stranger_convo_button_2_jump_to = 'stranger_convo'     # TODO
+stranger_convo_button_2_resp = "You realise you probably shouldn't cause any kind of scene, best to just move on..."
+stranger_convo_button_2_jump_to = 'stranger_convo'
 stranger_convo_button_3_text = 'Investigate the car to your left'
 stranger_convo_button_3_resp = "stranger_resp_3_here"
 stranger_convo_button_3_jump_to = 'L1'
 stranger_convo_button_3_resp = "There doesn't seem to be anything amiss here, just another part of the scenery on this rain-soaked street."
-stranger_convo_button_3_jump_to = 'stranger_convo'     # TODO
+stranger_convo_button_3_jump_to = 'stranger_convo'
 
 car_boot_prompt = f"""
 The sound is like the lock turning in a Stasi cell. But there’s another noise, something soft and gentle, yet it cuts through the chug of diesel engines and snapping riles. Everything is dark, but that sound, that voice… it sounds like light.
@@ -44,14 +44,14 @@ But there’s another sound. Something terrifying, though she’s been told to e
 The letter gave her instructions, but what was she supposed to do?
 {resource_string('writer.art', 'guard_scene').decode('utf-8')}"""
 car_boot_button_1_text = 'Open the trunk'
-car_boot_button_1_resp = "car_boot_resp_1_here"  # TODO
-car_boot_button_1_jump_to = 'car_boot'  # TODO
-car_boot_button_2_text = 'Swallow the letter'  # TODO
+car_boot_button_1_resp = "You feel your way across the smooth insides of the trunk, but there doesn't seem to be any way to let yourself out. You're trapped!"  # TODO
+car_boot_button_1_jump_to = 'car_boot'
+car_boot_button_2_text = 'Swallow the letter'
 car_boot_button_2_resp = "You choke down the letter"
-car_boot_button_2_jump_to = 'flag'  # TODO
+car_boot_button_2_jump_to = 'flag'
 car_boot_button_3_text = 'Tap on the left and right of the trunk'
-car_boot_button_3_resp = "car_boot_resp_3_here"  # TODO
-car_boot_button_3_jump_to = 'car_boot'  # TODO
+car_boot_button_3_resp = "You hear a hollow thunk as you rap either side of the trunk. You don't draw the attention of anyone." 
+car_boot_button_3_jump_to = 'car_boot'
 
 car_scene_story_text = """Jenny can’t quite believe the letter’s orders. But then, she can’t believe she’s in the
 trunk of a car, waiting to cross the most contested border in modern history. She can almost feel the
