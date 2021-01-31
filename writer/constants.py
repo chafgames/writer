@@ -11,10 +11,10 @@ bar_order_button_3_jump_to = 'stranger_convo'
 
 
 stranger_convo_prompt = """    \"I’m… Michael. Please listen very carefully, I won’t repeat these instructions.
-    When you leave this bar, cross the road and enter the building with the blue door. Look neither left nor right. Speak to no one.
-    When you are inside, change into the clothes provided and proceed to the garage. There will be a car waiting there.
-    Climb into the trunk and open the letter beneath the spare tire.
-    When you are finished, follow the instructions and swallow the letter. It may be some time before you eat anything else.\"
+When you leave this bar, cross the road and enter the building with the blue door. Look neither left nor right. Speak to no one.
+When you are inside, change into the clothes provided and proceed to the garage. There will be a car waiting there.
+Climb into the trunk and open the letter beneath the spare tire.
+When you are finished, follow the instructions and swallow the letter. It may be some time before you eat anything else.\"
 
 You leave the bar and cross the road."""
 stranger_convo_button_1_text = 'Go through the blue door'
@@ -26,3 +26,7 @@ stranger_convo_button_2_jump_to = 'L1'
 stranger_convo_button_3_text = 'Investigate the car to your left'
 stranger_convo_button_3_resp = "stranger_resp_3_here"
 stranger_convo_button_3_jump_to = 'L1'
+
+car_scene_story_text = """Jenny can’t quite believe the letter’s orders. But then, she can’t believe she’s in the
+trunk of a car, waiting to cross the most contested border in modern history. She can almost feel the
+wheels crunching over barbed wire, feel the barrier falling, trapping her in East Berlin."""
