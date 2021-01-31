@@ -61,3 +61,15 @@ intro_text = """but the biggest thing that has happened in the world in my life,
 by the grace of God, America won the Cold War.
   - President George H.W. Bush"""
 flag_text = "Jenny breaths a sigh of relief as the sound of the guard station fades away. She’s in the East now, and soon to be on her own. A shiver runs through her spine, cold as the war she’s joined. But there’s a warmth too, a pride that tells her what she’s doing matters, that lives can be rebuilt through her actions, families reunited. Where people are willing to risk themselves for others, there’s hope. This is Jenny’s last thought as she closes her eyes in the dark trunk of a Volkswagen."
+
+
+mirror_prompt = f"{resource_string('writer.art', 'mirror').decode('utf-8')}\Jenny adjusts her makeup in the mirror one last time. She feels a headache coming on, tension, fear, excitement. It fades as she rubs her temples. But how is she getting to the restaurant? The Captain told her earlier, if only she could remember…"
+mirror_button_1_text = 'Black Coffee'
+mirror_button_1_resp = 'The bartender shrugs as you bring the coffee over to the stranger.'
+mirror_button_1_jump_to = 'stranger_convo'
+mirror_button_2_text = 'Franziskaner Weissbier'
+mirror_button_2_resp = "\"Are you sure you don't want to order for two?\". The bartender leers as you walk over to the stranger"
+mirror_button_2_jump_to = 'stranger_convo'
+mirror_button_3_text = 'Miller Light'
+mirror_button_3_resp = "\"Be quick, the next stasi shift gets off soon and you two won't be alone for long\", the bartender whispers as you pay for the drink."
+mirror_button_3_jump_to = 'stranger_convo'
