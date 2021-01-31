@@ -33,8 +33,10 @@ class GameState(object):
         self.mode = 2
         self.show_mini_map = True
         self.found_letters = []
-        self.frames = {'right': {'text': 'THIS IS THE RIGHT TEXT'},
-                       'left': {'text': 'THIS IS THE LEFT TEXT'}}
+        self.frames = {'frame_L1': {'text': 'I\'m... looking for someone?'},
+                       'frame_L2': {'text': 'this is L2 Story'},
+                       'frame_L3': {'text': 'this is L3 Story'}}
+        self.word = ''
 
     @property
     def map_x(self):
