@@ -28,7 +28,7 @@ class River(Scene):
 
     def reset(self, old_scene=None, screen=None):
         effects = [
-            Stars(screen, (20)),
+            Stars(self._screen, (20)),
             self.intro_text(self.car_text, 0, x=22, y=10),
             self.intro_text(constants.river_scene_story_text, 40, x=12, y=35),
         ]

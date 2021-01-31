@@ -115,7 +115,7 @@ def run(screen):
 
     scenes.append(Captain(screen))
     scenes.append(Wall(screen))
-    # scenes.append(River(screen))
+    scenes.append(River(screen))
     scenes.append(Prompt(screen, name='final', title='',
                          prompt=constants.river_scene_story_text,
                          buttons=[constants.final_button_1_text,
