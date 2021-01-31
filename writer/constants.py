@@ -74,15 +74,15 @@ But just as Jenny leaves her home, disaster strikes. The Captain stands in the r
 mirror_prompt = f"{resource_string('writer.art', 'mirror').decode('utf-8')}\nJenny adjusts her makeup in the mirror one last time. She feels a headache coming on, tension, fear, excitement. It fades as she rubs her temples. But how is she getting to the restaurant? The Captain told her earlier, if only she could remember…"
 
 pig_prompt = f"{resource_string('writer.art', 'chauffeur').decode('utf-8')}\nThe Captain was a pig, but his driver wasn’t. Jenny never got a good look at his face, but that voice, when he asked her “where to?” as if he didn’t know… He sounded so familiar. Jenny reached out with reckless words, knowing they were her best friends, her sharpest weapons.\nBut what did she say? So hard to remember…"
-pig_button_1_text = 'ans1'
-pig_button_1_resp = 'resp1'
+pig_button_1_text = "You're that man... from the bar?"
+pig_button_1_resp = 'The driver shakes his head, staring down at his feet.'
 pig_button_1_jump_to = 'pig'
-pig_button_2_text = 'ans2'
-pig_button_2_resp = "resp2"
+pig_button_2_text = "I... know you from somewhere... but I can't remember..."
+pig_button_2_resp = "He stares at you silently."
 pig_button_2_jump_to = 'pig'
 pig_button_3_text = '“Did you drive me across the border?'
-pig_button_3_resp = "resp3"
-pig_button_3_jump_to = 'pig'
+pig_button_3_resp = "A smile starts to creep onto the driver's face."
+pig_button_3_jump_to = 'Captain'
 
 wall_scene_story_text = """Jenny’s feet pound the rain slick pavement to the beat of her heart.
 She’s panting now, running through the night with no hope of escape. She knows she’ll give up the family eventually,
