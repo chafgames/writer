@@ -2,11 +2,11 @@ from asciimatics.screen import Screen
 from asciimatics.effects import Effect
 from math import pi
 
+from writer.gamestate import STATE
+
 import logging
 logging.basicConfig(filename='writer.log', encoding='utf-8', level=logging.DEBUG)
 logger = logging.getLogger(__name__)
-
-from writer.gamestate import STATE
 
 
 class MiniMap(Effect):
@@ -38,10 +38,10 @@ class MiniMap(Effect):
                 self._screen.print_at(pixel, self._x + mx, self._y + my, fg_colour, bg=bg_colour)
 
         if STATE.car:
-            right = "`o##o>"
-            left = "<o##o`"
-            up = "q-/\-p"
-            down = "º-\/-º"
+            right = '`o##o>'
+            left = '<o##o`'
+            up = 'q-/\-p'  # noqa: 401
+            down = 'º-\/-º' # noqa: 401
         else:
             left = "<"
             right = ">"

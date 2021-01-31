@@ -33,8 +33,9 @@ class GameState(object):
         self.mode = 2
         self.show_mini_map = True
         self.found_letters = []
-        self.frames = {'status': {'text': 'this is where the game state will go!'},
-                       'text': {'text': 'this is where the long text will go!'}}
+        self.frames = {'frame_L1': {'text': 'I\'m... looking for someone?'},
+                       'frame_L2': {'text': 'this is L2 Story'},
+                       'frame_L3': {'text': 'this is L3 Story'}}
         self.word = ''
 
     @property
