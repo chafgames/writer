@@ -34,6 +34,7 @@ class Jenny(StaticRenderer):
                     new_image += "\n"
             self._images.append(new_image)
 
+
 class BW(StaticRenderer):
     def __init__(self, screen, renderer):
         super(BW, self).__init__()

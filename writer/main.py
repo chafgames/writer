@@ -93,7 +93,6 @@ def run(screen):
     # L2 = 'ALIVE'
     # scenes.append(GameController(screen, L2, LEVEL_MAPS[L2], name='L2'))
 
-
     scenes.append(Credits(screen))
     scenes.append(Thanks(screen))
 

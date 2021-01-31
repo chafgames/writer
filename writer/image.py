@@ -3,12 +3,11 @@ from asciimatics.scene import Scene
 from asciimatics.effects import Print
 from asciimatics.event import KeyboardEvent
 
-from asciimatics.particles import Rain
 from asciimatics.renderers import FigletText, ColourImageFile
 from asciimatics.exceptions import NextScene
 from asciimatics.screen import Screen
 
-import  pkg_resources
+import pkg_resources
 
 
 class Image(Scene):
@@ -26,8 +25,8 @@ class Image(Scene):
             # Rain(screen, self.duration),
             Print(screen, ColourImageFile(self._screen, image_filename, screen.height, bg=Screen.COLOUR_BLACK,
                   fill_background=False, uni=False, dither=False),
-                0,
-                stop_frame=100),
+                  0,
+                  stop_frame=100),
 
             Print(screen,
                   Dull(screen, FigletText(self._imagetext, font='thin', width=self._screen.width)),
@@ -40,7 +39,7 @@ class Image(Scene):
             self.add_effect(fx)
 
     def process_event(self, event):
-        super(Intro, self).process_event(event)
+        super(Image, self).process_event(event)
         if isinstance(event, KeyboardEvent):
             if event.key_code == 32:  # SPACE key
                 raise NextScene

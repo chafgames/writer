@@ -1,5 +1,4 @@
-from writer.renderers import Dull, BW
-from writer.constants import car_scene_story_text
+from writer.renderers import BW
 from asciimatics.scene import Scene
 from asciimatics.effects import Print
 from asciimatics.event import KeyboardEvent
@@ -11,12 +10,12 @@ from asciimatics.exceptions import NextScene
 from pkg_resources import resource_string
 from writer import constants
 
+
 class Car(Scene):
     def __init__(self, screen, effects=[], duration=400, clear=True, name='Car'):
         super().__init__(effects, duration, clear, name)
         self._screen = screen
         self.car_text = resource_string('writer.art', 'car_road').decode('utf-8')
-
 
     def intro_text(self, text, start, x, y):
         return Print(self._screen,
