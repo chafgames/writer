@@ -34,6 +34,7 @@ class GameController(Scene):
         self.word = word
         self.map = map
         self.car = car
+        self.playerx, self.playery = 1.5, 1.5
         effects = [
             RayCaster(screen),
             TextFrame(screen, height=screen.height, width=frame_width, data={},
@@ -48,6 +49,8 @@ class GameController(Scene):
         STATE.word = self.word
         STATE.map = self.map
         STATE.car = self.car
+        STATE.x = self.playerx
+        STATE.y = self.playery
 
     def process_event(self, event):
 

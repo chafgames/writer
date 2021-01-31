@@ -45,7 +45,11 @@ def run(screen):
     scenes.append(GameController(screen, L2, LEVEL_MAPS[L2]))
 
     L3 = 'CAR'
-    scenes.append(GameController(screen, L3, LEVEL_MAPS[L3], car=True))
+    scenes.append(GameController(screen, L3, add_word(LEVEL_MAPS[L3], L3), car=True, name='L3'))
+
+    scenes.append(Credits(screen))
+    scenes.append(Thanks(screen))
+
     screen.refresh()
 
     screen.play(scenes, stop_on_resize=True)
