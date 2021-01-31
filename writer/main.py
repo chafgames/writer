@@ -5,6 +5,7 @@ from writer.intro2 import Intro2
 from writer.title import Title
 from writer.bar import Bar
 from writer.car import Car
+from writer.ironcurtain import IronCurtain
 from writer.levels import LEVEL_MAPS
 from writer.maze import make_maze, add_word
 from writer.credits import Credits
@@ -38,6 +39,7 @@ def run(screen):
     scenes.append(Image(screen, name=Intro, imagetext=constants.intro_text, imagefile='globe.gif'))
     # scenes.append(Intro(screen))
     scenes.append(Intro2(screen))
+    scenes.append(IronCurtain(screen))
     scenes.append(Title(screen))
     L1 = 'TOM'
     maze = make_maze(3, 3)
@@ -93,6 +95,7 @@ def run(screen):
     # L2 = 'ALIVE'
     # scenes.append(GameController(screen, L2, LEVEL_MAPS[L2], name='L2'))
 
+    scenes.append(IronCurtain(screen))
     scenes.append(Credits(screen))
     scenes.append(Thanks(screen))
 

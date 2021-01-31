@@ -27,9 +27,13 @@ The man’s expression is set, he stares over his drink but doesn’t touch it. 
 
 [Open the trunk, *Swallow the letter*, Tap on the left and right of the trunk]
 
+- Flag image scene
 Jenny breaths a sigh of relief as the sound of the guard station fades away. She’s in the East now, and soon to be on her own. A shiver runs through her spine, cold as the war she’s joined. But there’s a warmth too, a pride that tells her what she’s doing matters, that lives can be rebuilt through her actions, families reunited. Where people are willing to risk themselves for others, there’s hope. This is Jenny’s last thought as she closes her eyes in the dark trunk of a Volkswagen.
 
+- Video / ascii scene
 Three months behind the Iron Curtain have hardened Jenny’s body along with her mind. She’s all angles now, the constant rationing narrowing her to a fine point. She feels like a robot, like a woman from Flatworld, a single line that can’t think for fear of spilling everything like sewage from a burst pipe. The Officer she’s meeting tonight has called to make sure she’s coming. Of course she’s coming; it’s her job. A few gentle words, some well placed flattery, then she’ll slip away with next week’s guard rotation and another hundred souls will brave the wires and the guns separating East from West. And they’ll live and die on the truth – or lies – she finds tonight.
+
+- Prompt scene text here, followed by art/mirror.  (just with contine / OK - no question)
 Jenny adjusts her makeup in the mirror one last time. She feels a headache coming on, tension, fear, excitement. It fades as she rubs her temples. But how is she getting to the restaurant? The Captain told her earlier, if only she could remember…
 
 - Maze level with 'chauffeur' word
