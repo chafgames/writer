@@ -29,10 +29,6 @@ stranger_convo_button_2_jump_to = 'stranger_convo'     # TODO
 stranger_convo_button_3_text = 'Investigate the car to your left'
 stranger_convo_button_3_resp = "stranger_resp_3_here"
 stranger_convo_button_3_jump_to = 'L1'
-
-car_scene_story_text = """Jenny can’t quite believe the letter’s orders. But then, she can’t believe she’s in the
-trunk of a car, waiting to cross the most contested border in modern history. She can almost feel the
-wheels crunching over barbed wire, feel the barrier falling, trapping her in East Berlin."""
 stranger_convo_button_3_resp = "There doesn't seem to be anything amiss here, just another part of the scenery on this rain-soaked street."
 stranger_convo_button_3_jump_to = 'stranger_convo'     # TODO
 
@@ -45,10 +41,14 @@ But there’s another sound. Something terrifying, though she’s been told to e
 The letter gave her instructions, but what was she supposed to do?"""
 car_boot_button_1_text = 'Open the trunk'
 car_boot_button_1_resp = "car_boot_resp_1_here"  # TODO
-car_boot_button_1_jump_to = 'car_boot' # TODO
-car_boot_button_2_text = 'Swallow the letter' # TODO
-car_boot_button_2_resp = "car_boot_resp_2_here" # TODO
-car_boot_button_2_jump_to = 'car_boot' # TODO
+car_boot_button_1_jump_to = 'car_boot'  # TODO
+car_boot_button_2_text = 'Swallow the letter'  # TODO
+car_boot_button_2_resp = "car_boot_resp_2_here"  # TODO
+car_boot_button_2_jump_to = 'car_boot'  # TODO
 car_boot_button_3_text = 'Tap on the left and right of the trunk'
-car_boot_button_3_resp = "car_boot_resp_3_here" # TODO
-car_boot_button_3_jump_to = 'car_boot' # TODO
+car_boot_button_3_resp = "car_boot_resp_3_here"  # TODO
+car_boot_button_3_jump_to = 'car_boot'  # TODO
+
+car_scene_story_text = """Jenny can’t quite believe the letter’s orders. But then, she can’t believe she’s in the
+trunk of a car, waiting to cross the most contested border in modern history. She can almost feel the
+wheels crunching over barbed wire, feel the barrier falling, trapping her in East Berlin."""
