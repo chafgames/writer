@@ -103,3 +103,13 @@ pulls his pistol from his coat. When he pushes Jenny backwards, she doesn’t re
 arms of a waiting Westerner. She screams as she’s pulled back up the bank, and the driver’s pistol sends
 bullets wailing into the dark. Over the noise and in the flash of a muzzle, she see’s him mouth a word,
 one Jenny has held to for over a decade."""
+
+final_button_1_text = "I Love You"
+final_button_1_resp = 'THE END'
+final_button_1_jump_to = 'Credits'
+final_button_2_text = "Live"
+final_button_2_resp = "THE END"
+final_button_2_jump_to = 'Credits'
+final_button_3_text = 'Tom'
+final_button_3_resp = "THE END"
+final_button_3_jump_to = 'Credits'

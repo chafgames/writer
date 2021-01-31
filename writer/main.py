@@ -121,6 +121,18 @@ def run(screen):
     scenes.append(Captain(screen))
     scenes.append(Wall(screen))
     scenes.append(River(screen))
+    scenes.append(Prompt(screen, name='final', title='',
+                         prompt=constants.river_scene_story_text,
+                         buttons=[constants.final_button_1_text,
+                                  constants.final_button_2_text,
+                                  constants.final_button_3_text],
+                         responses=[constants.final_button_1_resp,
+                                    constants.final_button_2_resp,
+                                    constants.final_button_3_resp],
+                         closing_scenes=[constants.final_button_1_jump_to,
+                                         constants.final_button_2_jump_to,
+                                         constants.final_button_3_jump_to]))
+
     scenes.append(Credits(screen))
     scenes.append(Thanks(screen))
 
