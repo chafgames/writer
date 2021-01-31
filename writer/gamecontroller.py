@@ -23,7 +23,7 @@ class GameController(Scene):
     Drawing of the Scene is then handled in the usual way.
     """
 
-    def __init__(self, screen, word, map):
+    def __init__(self, screen, word, map, name='GameController'):
         self.safe_to_default_unhandled_input = False
         self.delete_count = None
         # self.frame_update_count = 0
@@ -41,7 +41,7 @@ class GameController(Scene):
                         x=right_frame_xpos, y=0, name='status', title='status'),
             self._mini_map,
         ]
-        super(GameController, self).__init__(effects, -1)
+        super(GameController, self).__init__(effects, -1, name=name)
 
     def reset(self):
         STATE.word = self.word

@@ -9,7 +9,7 @@ from asciimatics.exceptions import NextScene
 
 
 class Intro2(Scene):
-    def __init__(self, screen, effects=[], duration=400, clear=True, name='Intro'):
+    def __init__(self, screen, effects=[], duration=400, clear=True, name='Intro2'):
         super().__init__(effects, duration, clear, name)
         self._screen = screen
         self.story_text1 = "Jenny Sinton has fallen into a deep coma and doesn’t know how to find her way out..."

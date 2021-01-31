@@ -6,6 +6,7 @@ from writer.levels import LEVEL_MAPS
 from writer.maze import make_maze, add_word
 from writer.credits import Credits
 from writer.thanks import Thanks
+from writer.prompt import Prompt
 
 from asciimatics.screen import Screen
 from asciimatics.exceptions import ResizeScreenError
@@ -32,15 +33,20 @@ def run(screen):
     screen.width = 160
     scenes.append(Intro(screen))
     scenes.append(Intro2(screen))
+    scenes.append(Prompt(screen, name='myTestPrompt', title='my test prompt',
+                         prompt='What is the flight speed of an unladen sparrow?',
+                         buttons=['African or European?', 'Erm... Shrubbary?', 'Niiii!'],
+                         responses=['African?', 'Shrubbary', 'Ni.'],
+                         closing_scenes=['Intro2', 'L2', 'Credits']))
 
     L1 = 'TOM'
     maze = make_maze(3, 3)
-    scenes.append(GameController(screen, L1, add_word(maze, word=L1)))
-    # scenes.append(GameController(screen, L1, LEVEL_MAPS[L1]))
-    scenes.append(FoundText(screen))
+    scenes.append(GameController(screen, L1, add_word(maze, word=L1), name='L1'))
+    # # scenes.append(GameController(screen, L1, LEVEL_MAPS[L1]))
+    scenes.append(FoundText(screen, name=FoundText))
 
     L2 = 'ALIVE'
-    scenes.append(GameController(screen, L2, LEVEL_MAPS[L2]))
+    scenes.append(GameController(screen, L2, LEVEL_MAPS[L2], name='L2'))
     scenes.append(Credits(screen))
     scenes.append(Thanks(screen))
 
