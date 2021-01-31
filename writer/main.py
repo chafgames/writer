@@ -36,10 +36,10 @@ def run(screen):
     scenes = []
     screen.height = 48
     screen.width = 160
-    scenes.append(Image(screen, name=Intro, imagetext=constants.intro_text, imagefile='globe.gif'))
+    scenes.append(Image(screen, name='Intro', imagetext=constants.intro_text, imagefile='globe.gif'))
     # scenes.append(Intro(screen))
     scenes.append(Intro2(screen))
-    scenes.append(IronCurtain(screen))
+
     scenes.append(Title(screen))
     L1 = 'TOM'
     maze = make_maze(3, 3)
@@ -86,7 +86,10 @@ def run(screen):
                          closing_scenes=[constants.car_boot_button_1_jump_to,
                                          constants.car_boot_button_2_jump_to,
                                          constants.car_boot_button_3_jump_to]))
-    # TODO: image scene here
+    scenes.append(Image(screen, name='flag', imagetext=constants.flag_text, imagefile='flag.gif'))
+
+    scenes.append(IronCurtain(screen))
+    # TODO :new prompt (mirror)
     L4 = 'CHAUFFEUR'
     maze = make_maze(6, 6)
     scenes.append(GameController(screen, L4, add_word(maze, word=L4), name='L4'))

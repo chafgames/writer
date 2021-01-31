@@ -47,8 +47,8 @@ car_boot_button_1_text = 'Open the trunk'
 car_boot_button_1_resp = "car_boot_resp_1_here"  # TODO
 car_boot_button_1_jump_to = 'car_boot'  # TODO
 car_boot_button_2_text = 'Swallow the letter'  # TODO
-car_boot_button_2_resp = "car_boot_resp_2_here"  # TODO
-car_boot_button_2_jump_to = 'car_boot'  # TODO
+car_boot_button_2_resp = "You choke down the letter"
+car_boot_button_2_jump_to = 'flag'  # TODO
 car_boot_button_3_text = 'Tap on the left and right of the trunk'
 car_boot_button_3_resp = "car_boot_resp_3_here"  # TODO
 car_boot_button_3_jump_to = 'car_boot'  # TODO
@@ -60,3 +60,4 @@ wheels crunching over barbed wire, feel the barrier falling, trapping her in Eas
 intro_text = """but the biggest thing that has happened in the world in my life, in our lives, is this:
   by the grace of God, America won the Cold War.
         President George H.W. Bush"""
+flag_text = "Jenny breaths a sigh of relief as the sound of the guard station fades away. She’s in the East now, and soon to be on her own. A shiver runs through her spine, cold as the war she’s joined. But there’s a warmth too, a pride that tells her what she’s doing matters, that lives can be rebuilt through her actions, families reunited. Where people are willing to risk themselves for others, there’s hope. This is Jenny’s last thought as she closes her eyes in the dark trunk of a Volkswagen."
