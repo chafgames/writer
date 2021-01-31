@@ -1,6 +1,5 @@
 from writer.foundtext import FoundText
 from writer.gamecontroller import GameController
-from writer.intro import Intro
 from writer.intro2 import Intro2
 from writer.title import Title
 from writer.bar import Bar
@@ -114,13 +113,9 @@ def run(screen):
                                          constants.pig_button_2_jump_to,
                                          constants.pig_button_3_jump_to]))
 
-    # TODO: FINAL SCENE
-    # L2 = 'ALIVE'
-    # scenes.append(GameController(screen, L2, LEVEL_MAPS[L2], name='L2'))
-
     scenes.append(Captain(screen))
     scenes.append(Wall(screen))
-    scenes.append(River(screen))
+    # scenes.append(River(screen))
     scenes.append(Prompt(screen, name='final', title='',
                          prompt=constants.river_scene_story_text,
                          buttons=[constants.final_button_1_text,
@@ -133,7 +128,7 @@ def run(screen):
                                          constants.final_button_2_jump_to,
                                          constants.final_button_3_jump_to]))
 
-    scenes.append(Credits(screen))
+    scenes.append(Credits(screen, name=Credits))
     scenes.append(Thanks(screen))
 
     screen.refresh()
