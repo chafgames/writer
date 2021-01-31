@@ -51,11 +51,13 @@ def run(screen):
 
     L2 = 'ALIVE'
     scenes.append(GameController(screen, L2, LEVEL_MAPS[L2], name='L2'))
-    scenes.append(Credits(screen))
-    scenes.append(Thanks(screen))
 
     L3 = 'CAR'
     scenes.append(GameController(screen, L3, LEVEL_MAPS[L3], car=True))
+
+    scenes.append(Credits(screen))
+    scenes.append(Thanks(screen))
+
     screen.refresh()
 
     screen.play(scenes, stop_on_resize=True)
