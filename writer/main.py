@@ -86,7 +86,8 @@ def run(screen):
     # scenes.append(GameController(screen, L2, LEVEL_MAPS[L2], name='L2'))
 
     L4 = 'CHAUFFEUR'
-    scenes.append(GameController(screen, L4, add_word(make_maze(6, 6)), name='L4'))
+    maze = make_maze(6, 6)
+    scenes.append(GameController(screen, L4, add_word(maze, word=L4), name='L4'))
 
     scenes.append(Credits(screen))
     scenes.append(Thanks(screen))
