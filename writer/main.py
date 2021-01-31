@@ -39,12 +39,13 @@ def run(screen):
     L1 = 'TOM'
     maze = make_maze(3, 3)
     scenes.append(GameController(screen, L1, add_word(maze, word=L1)))
-    # scenes.append(GameController(screen, L1, LEVEL_MAPS[L1]))
     scenes.append(FoundText(screen))
 
     L2 = 'ALIVE'
     scenes.append(GameController(screen, L2, LEVEL_MAPS[L2]))
 
+    L3 = 'CAR'
+    scenes.append(GameController(screen, L3, LEVEL_MAPS[L3], car=True))
     screen.refresh()
 
     screen.play(scenes, stop_on_resize=True)

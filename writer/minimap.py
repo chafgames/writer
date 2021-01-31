@@ -2,6 +2,10 @@ from asciimatics.screen import Screen
 from asciimatics.effects import Effect
 from math import pi
 
+import logging
+logging.basicConfig(filename='writer.log', encoding='utf-8', level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
 from writer.gamestate import STATE
 
 
@@ -9,14 +13,6 @@ class MiniMap(Effect):
     """
     Class to draw a small map based on the one stored in the GameState.
     """
-
-    # Translation from angle to map directions.
-    _DIRECTIONS = [
-        (0, pi / 4, ">"),
-        (pi / 4, 3 * pi / 4, "v"),
-        (3 * pi / 4, 5 * pi / 4, "<"),
-        (5 * pi / 4, 7 * pi / 4, "^")
-    ]
 
     def __init__(self, screen, size=5):
         super(MiniMap, self).__init__(screen)
@@ -40,6 +36,25 @@ class MiniMap(Effect):
                     fg_colour = Screen.COLOUR_BLACK
                     pixel = " "
                 self._screen.print_at(pixel, self._x + mx, self._y + my, fg_colour, bg=bg_colour)
+
+        if STATE.car:
+            right = "`o##o>"
+            left = "<o##o`"
+            up = "q-/\-p"
+            down = "º-\/-º"
+        else:
+            left = "<"
+            right = ">"
+            up = "^"
+            down = "v"
+
+        # Translation from angle to map directions.
+        self._DIRECTIONS = [
+            (0, pi / 4, right),
+            (pi / 4, 3 * pi / 4, down),
+            (3 * pi / 4, 5 * pi / 4, left),
+            (5 * pi / 4, 7 * pi / 4, up)
+        ]
 
         # Draw the player
         text = ">"
