@@ -81,3 +81,12 @@ mirror_button_2_jump_to = 'stranger_convo'
 mirror_button_3_text = 'Miller Light'
 mirror_button_3_resp = "\"Be quick, the next stasi shift gets off soon and you two won't be alone for long\", the bartender whispers as you pay for the drink."
 mirror_button_3_jump_to = 'stranger_convo'
+
+wall_scene_story_text = """Jenny’s feet pound the rain slick pavement to the beat of her heart.
+She’s panting now, running through the night with no hope of escape. She knows she’ll give up the family eventually,
+and her shame will burn hotter than any brand upon her skin. She’s close to the Wall now, but what can she do?
+Spotlights sweep the river, soldiers stand in guard posts. Without warning, a body slams into her from the side.
+The chauffeur! He stares into her eyes, his big and round and brown and terrified. But then he moves,
+pushes her down the riverbank. There’s a boat, as though he knew this was happening,
+as though he were waiting for her to run. How can he know her so well when they’ve never even shared a conversation?
+When he pushes her into the boat, he signals to someone high above. A spotlight winks off."""
