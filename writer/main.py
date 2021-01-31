@@ -98,20 +98,20 @@ def run(screen):
     scenes.append(SinglePrompt(screen, name='mirror', prompt=constants.mirror_prompt))
 
     # scenes.append(PlainText(screen, name='flagtext', text=constants.flag_text, font='straight'))
-    # scenes.append(Prompt(screen, name='mirror', title='',
-    #                      prompt=constants.stranger_convo_prompt,
-    #                      buttons=[constants.stranger_convo_button_1_text,
-    #                               constants.stranger_convo_button_2_text,
-    #                               constants.stranger_convo_button_3_text],
-    #                      responses=[constants.stranger_convo_button_1_resp,
-    #                                 constants.stranger_convo_button_2_resp,
-    #                                 constants.stranger_convo_button_3_resp],
-    #                      closing_scenes=[constants.stranger_convo_button_1_jump_to,
-    #                                      constants.stranger_convo_button_2_jump_to,
-    #                                      constants.stranger_convo_button_3_jump_to]))
     L4 = 'CHAUFFEUR'
     maze = make_maze(6, 6)
     scenes.append(GameController(screen, L4, add_word(maze, word=L4), name='L4'))
+    scenes.append(Prompt(screen, name='pig', title='',
+                         prompt=constants.pig_prompt,
+                         buttons=[constants.pig_button_1_text,
+                                  constants.pig_button_2_text,
+                                  constants.pig_button_3_text],
+                         responses=[constants.pig_button_1_resp,
+                                    constants.pig_button_2_resp,
+                                    constants.pig_button_3_resp],
+                         closing_scenes=[constants.pig_button_1_jump_to,
+                                         constants.pig_button_2_jump_to,
+                                         constants.pig_button_3_jump_to]))
 
     # TODO: FINAL SCENE
     # L2 = 'ALIVE'

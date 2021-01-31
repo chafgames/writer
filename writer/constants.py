@@ -71,16 +71,18 @@ Behind the fear, there’s a hardness in those eyes, a will to survive. She ushe
 and they disappear into the distance. Jenny makes the final preparations for their journey, then leaves to meet her handler.
 But just as Jenny leaves her home, disaster strikes. The Captain stands in the rain, flanked by Stasi."""
 
-mirror_prompt = f"{resource_string('writer.art', 'mirror').decode('utf-8')}\Jenny adjusts her makeup in the mirror one last time. She feels a headache coming on, tension, fear, excitement. It fades as she rubs her temples. But how is she getting to the restaurant? The Captain told her earlier, if only she could remember…"
-mirror_button_1_text = 'Black Coffee'
-mirror_button_1_resp = 'The bartender shrugs as you bring the coffee over to the stranger.'
-mirror_button_1_jump_to = 'stranger_convo'
-mirror_button_2_text = 'Franziskaner Weissbier'
-mirror_button_2_resp = "\"Are you sure you don't want to order for two?\". The bartender leers as you walk over to the stranger"
-mirror_button_2_jump_to = 'stranger_convo'
-mirror_button_3_text = 'Miller Light'
-mirror_button_3_resp = "\"Be quick, the next stasi shift gets off soon and you two won't be alone for long\", the bartender whispers as you pay for the drink."
-mirror_button_3_jump_to = 'stranger_convo'
+mirror_prompt = f"{resource_string('writer.art', 'mirror').decode('utf-8')}\nJenny adjusts her makeup in the mirror one last time. She feels a headache coming on, tension, fear, excitement. It fades as she rubs her temples. But how is she getting to the restaurant? The Captain told her earlier, if only she could remember…"
+
+pig_prompt = f"{resource_string('writer.art', 'chauffeur').decode('utf-8')}\nThe Captain was a pig, but his driver wasn’t. Jenny never got a good look at his face, but that voice, when he asked her “where to?” as if he didn’t know… He sounded so familiar. Jenny reached out with reckless words, knowing they were her best friends, her sharpest weapons.\nBut what did she say? So hard to remember…"
+pig_button_1_text = 'ans1'
+pig_button_1_resp = 'resp1'
+pig_button_1_jump_to = 'pig'
+pig_button_2_text = 'ans2'
+pig_button_2_resp = "resp2"
+pig_button_2_jump_to = 'pig'
+pig_button_3_text = '“Did you drive me across the border?'
+pig_button_3_resp = "resp3"
+pig_button_3_jump_to = 'pig'
 
 wall_scene_story_text = """Jenny’s feet pound the rain slick pavement to the beat of her heart.
 She’s panting now, running through the night with no hope of escape. She knows she’ll give up the family eventually,
