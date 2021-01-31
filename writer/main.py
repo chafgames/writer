@@ -39,11 +39,11 @@ def run(screen):
     scenes.append(Title(screen))
     scenes.append(Bar(screen))
 
-    scenes.append(Prompt(screen, name='myTestPrompt', title='my test prompt',
-                         prompt='What is the flight speed of an unladen sparrow?',
-                         buttons=['African or European?', 'Erm... Shrubbary?', 'Niiii!'],
-                         responses=['African?', 'Shrubbary', 'Ni.'],
-                         closing_scenes=['Intro2', 'L2', 'Credits']))
+    # scenes.append(Prompt(screen, name='myTestPrompt', title='my test prompt',
+    #                      prompt='What is the flight speed of an unladen sparrow?',
+    #                      buttons=['African or European?', 'Erm... Shrubbary?', 'Niiii!'],
+    #                      responses=['African?', 'Shrubbary', 'Ni.'],
+    #                      closing_scenes=['Intro2', 'L2', 'Credits']))
     L1 = 'TOM'
     maze = make_maze(3, 3)
     scenes.append(GameController(screen, L1, add_word(maze, word=L1), name='L1'))
