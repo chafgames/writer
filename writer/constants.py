@@ -56,3 +56,7 @@ car_boot_button_3_jump_to = 'car_boot'  # TODO
 car_scene_story_text = """Jenny can’t quite believe the letter’s orders. But then, she can’t believe she’s in the
 trunk of a car, waiting to cross the most contested border in modern history. She can almost feel the
 wheels crunching over barbed wire, feel the barrier falling, trapping her in East Berlin."""
+
+intro_text = """but the biggest thing that has happened in the world in my life, in our lives, is this:
+  by the grace of God, America won the Cold War.
+        President George H.W. Bush"""

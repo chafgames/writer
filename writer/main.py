@@ -10,6 +10,7 @@ from writer.maze import make_maze, add_word
 from writer.credits import Credits
 from writer.thanks import Thanks
 from writer.prompt import Prompt
+from writer.image import Image
 from writer import constants
 
 from asciimatics.screen import Screen
@@ -34,12 +35,14 @@ def run(screen):
     scenes = []
     screen.height = 48
     screen.width = 160
-    scenes.append(Intro(screen))
+    scenes.append(Image(screen, name=Intro, imagetext=constants.intro_text, imagefile='globe.gif'))
+    # scenes.append(Intro(screen))
     scenes.append(Intro2(screen))
     scenes.append(Title(screen))
     L1 = 'TOM'
     maze = make_maze(3, 3)
     scenes.append(GameController(screen, L1, add_word(maze, word=L1), name='L1'))
+
     scenes.append(FoundText(screen))
 
     scenes.append(Bar(screen))
