@@ -1,0 +1,28 @@
+There’s a cedarwood top to the bar, a cold lacquer at odds with the warmth of the landlord. Jenny’s tapping nervously on a coaster when a man slides into the seat beside her. He’s looking at the barman, waiting for something. He’s waiting for a drink… if only Jenny could remember what she was supposed to order…
+
+- Order any drink to proceed
+
+The man’s expression is set, he stares over his drink but doesn’t touch it. He thanks the barman with a nod. Easy jazz hides their conversation between the smooth notes of John Coltrane.
+“Miss Stinton.”
+“Yes?”
+
+- Prompt scene
+“I’m… Michael. Please listen very carefully, I won’t repeat these instructions. When you leave this bar, cross the road and enter the building with the blue door. Look neither left nor right. Speak to no one. When you are inside, change into the clothes provided and proceed to the garage. There will be a car waiting there. Climb into the trunk and open the letter beneath the spare tire. When you are finished, follow the instructions and swallow the letter. It may be some time before you eat anything else.”
+
+"You leave the bar and cross the road."
+
+[ *Go through the blue door*,  Speak to the doorman, Investigate the car to your left]
+
+
+- Car ascii art scene
+
+"Jenny can’t quite believe the letter’s orders. But then, she can’t believe she’s in the trunk of a car, waiting to cross the most contested border in modern history. She can almost feel the wheels crunching over barbed wire, feel the barrier falling, trapping her in East Berlin. "
+
+- Car level
+
+- Prompt scene
+
+"The sound is like the lock turning in a Stasi cell. But there’s another noise, something soft and gentle, yet it cuts through the chug of diesel engines and snapping riles. Everything is dark, but that sound, that voice… it sounds like light. "
+"But there’s another sound. Something terrifying, though she’s been told to expect it. Three taps on the outside of the trunk. A Stasi guard. The letter gave her instructions, but what was she supposed to do?"
+
+[Open the trunk, *Swallow the letter*, Tap on the left and right of the trunk]
