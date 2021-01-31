@@ -8,10 +8,11 @@ from writer.levels import LEVEL_MAPS
 from writer.maze import make_maze, add_word
 from writer.credits import Credits
 from writer.thanks import Thanks
+from writer.prompt import Prompt
+from writer import constants
 
 from asciimatics.screen import Screen
 from asciimatics.exceptions import ResizeScreenError
-
 import sys
 
 import logging
@@ -37,11 +38,34 @@ def run(screen):
     scenes.append(Title(screen))
     scenes.append(Bar(screen))
 
-    # scenes.append(Prompt(screen, name='myTestPrompt', title='my test prompt',
-    #                      prompt='What is the flight speed of an unladen sparrow?',
-    #                      buttons=['African or European?', 'Erm... Shrubbary?', 'Niiii!'],
-    #                      responses=['African?', 'Shrubbary', 'Ni.'],
-    #                      closing_scenes=['Intro2', 'L2', 'Credits']))
+    scenes.append(Prompt(screen, name='bar_order', title='',
+                         prompt=constants.bar_order_prompt,
+                         buttons=[constants.bar_order_button_1_text,
+                                  constants.bar_order_button_2_text,
+                                  constants.bar_order_button_3_text],
+                         responses=[constants.bar_order_button_1_resp,
+                                    constants.bar_order_button_2_resp,
+                                    constants.bar_order_button_3_resp],
+                         closing_scenes=[constants.bar_order_button_1_jump_to,
+                                         constants.bar_order_button_2_jump_to,
+                                         constants.bar_order_button_3_jump_to]))
+    scenes.append(Prompt(screen, name='stranger_convo', title='',
+                         prompt=constants.stranger_convo_prompt,
+                         buttons=[constants.stranger_convo_button_1_text,
+                                  constants.stranger_convo_button_2_text,
+                                  constants.stranger_convo_button_3_text],
+                         responses=[constants.stranger_convo_button_1_resp,
+                                    constants.stranger_convo_button_2_resp,
+                                    constants.stranger_convo_button_3_resp],
+                         closing_scenes=[constants.stranger_convo_button_1_jump_to,
+                                         constants.stranger_convo_button_2_jump_to,
+                                         constants.stranger_convo_button_3_jump_to]))
+    # scenes.append(Prompt(screen, name='stranger_convo', title='',
+    #                      prompt=constants.stranger_convo_prompt,
+    #                      buttons=['', '', ''],
+    #                      responses=[STATE.bar_order_resp_1, STATE.bar_order_resp_2, STATE.bar_order_resp_3],
+    #                      closing_scenes=['L1', 'L1', 'L1']))
+
     L1 = 'TOM'
     maze = make_maze(3, 3)
     scenes.append(GameController(screen, L1, add_word(maze, word=L1), name='L1'))

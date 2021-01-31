@@ -32,7 +32,7 @@ class PromptFrame(Frame):
 
         promptLayout = Layout([width])
         self.add_layout(promptLayout)
-        promptLayout.add_widget(Label(self._prompt))
+        promptLayout.add_widget(Label(self._prompt, height=height-6))
         promptLayout.add_widget(Divider())
 
         responseLayout = Layout([width])
