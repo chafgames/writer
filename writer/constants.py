@@ -50,7 +50,7 @@ car_boot_button_2_text = 'Swallow the letter'
 car_boot_button_2_resp = "You choke down the letter"
 car_boot_button_2_jump_to = 'flag'
 car_boot_button_3_text = 'Tap on the left and right of the trunk'
-car_boot_button_3_resp = "You hear a hollow thunk as you rap either side of the trunk. You don't draw the attention of anyone." 
+car_boot_button_3_resp = "You hear a hollow thunk as you rap either side of the trunk. You don't draw the attention of anyone."
 car_boot_button_3_jump_to = 'car_boot'
 
 car_scene_story_text = """Jenny can’t quite believe the letter’s orders. But then, she can’t believe she’s in the
@@ -70,3 +70,14 @@ and most of all she knows the people waiting to cross. She thinks this family ca
 Behind the fear, there’s a hardness in those eyes, a will to survive. She ushers them out the alley behind her apartment block,
 and they disappear into the distance. Jenny makes the final preparations for their journey, then leaves to meet her handler.
 But just as Jenny leaves her home, disaster strikes. The Captain stands in the rain, flanked by Stasi."""
+
+mirror_prompt = f"{resource_string('writer.art', 'mirror').decode('utf-8')}\Jenny adjusts her makeup in the mirror one last time. She feels a headache coming on, tension, fear, excitement. It fades as she rubs her temples. But how is she getting to the restaurant? The Captain told her earlier, if only she could remember…"
+mirror_button_1_text = 'Black Coffee'
+mirror_button_1_resp = 'The bartender shrugs as you bring the coffee over to the stranger.'
+mirror_button_1_jump_to = 'stranger_convo'
+mirror_button_2_text = 'Franziskaner Weissbier'
+mirror_button_2_resp = "\"Are you sure you don't want to order for two?\". The bartender leers as you walk over to the stranger"
+mirror_button_2_jump_to = 'stranger_convo'
+mirror_button_3_text = 'Miller Light'
+mirror_button_3_resp = "\"Be quick, the next stasi shift gets off soon and you two won't be alone for long\", the bartender whispers as you pay for the drink."
+mirror_button_3_jump_to = 'stranger_convo'
