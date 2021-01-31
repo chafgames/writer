@@ -12,11 +12,11 @@ from pkg_resources import resource_string
 
 
 class Car(Scene):
-    def __init__(self, screen, effects=[], duration=400, clear=True, name='Intro2'):
+    def __init__(self, screen, effects=[], duration=400, clear=True, name='Car'):
         super().__init__(effects, duration, clear, name)
         self._screen = screen
         self.car_text = resource_string('writer.art', 'car_road')
-        self.story_text = car_scene_story_text
+
 
     def intro_text(self, text, start, x, y):
         return Print(self._screen,
