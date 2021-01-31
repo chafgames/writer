@@ -61,3 +61,12 @@ intro_text = """but the biggest thing that has happened in the world in my life,
 by the grace of God, America won the Cold War.
   - President George H.W. Bush"""
 flag_text = "Jenny breaths a sigh of relief as the sound of the guard station fades away. She’s in the East now, and soon to be on her own. A shiver runs through her spine, cold as the war she’s joined. But there’s a warmth too, a pride that tells her what she’s doing matters, that lives can be rebuilt through her actions, families reunited. Where people are willing to risk themselves for others, there’s hope. This is Jenny’s last thought as she closes her eyes in the dark trunk of a Volkswagen."
+
+captain_scene_story_text = """The next week, Jenny meets a family waiting to cross into West Berlin.
+The fear in their eyes is nothing new, but she’s never handled a crossing with a child before.
+The child is a toddler, barely out of nappies, and presents complications the family can’t imagine.
+But Jenny is good at her job. She knows the guard rotas, knows the Wall and all its vagaries,
+and most of all she knows the people waiting to cross. She thinks this family can make it.
+Behind the fear, there’s a hardness in those eyes, a will to survive. She ushers them out the alley behind her apartment block,
+and they disappear into the distance. Jenny makes the final preparations for their journey, then leaves to meet her handler.
+But just as Jenny leaves her home, disaster strikes. The Captain stands in the rain, flanked by Stasi."""

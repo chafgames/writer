@@ -5,6 +5,7 @@ from writer.intro2 import Intro2
 from writer.title import Title
 from writer.bar import Bar
 from writer.car import Car
+from writer.captain import Captain
 from writer.ironcurtain import IronCurtain
 from writer.levels import LEVEL_MAPS
 from writer.maze import make_maze, add_word
@@ -102,6 +103,7 @@ def run(screen):
     # scenes.append(GameController(screen, L2, LEVEL_MAPS[L2], name='L2'))
 
     scenes.append(IronCurtain(screen))
+    scenes.append(Captain(screen))
     scenes.append(Credits(screen))
     scenes.append(Thanks(screen))
 

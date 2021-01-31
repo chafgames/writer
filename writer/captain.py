@@ -11,11 +11,11 @@ from pkg_resources import resource_string
 from writer import constants
 
 
-class Car(Scene):
-    def __init__(self, screen, effects=[], duration=400, clear=True, name='Car'):
+class Captain(Scene):
+    def __init__(self, screen, effects=[], duration=600, clear=True, name='Captain'):
         super().__init__(effects, duration, clear, name)
         self._screen = screen
-        self.car_text = resource_string('writer.art', 'car_road').decode('utf-8')
+        self.car_text = resource_string('writer.art', 'captain').decode('utf-8')
 
     def intro_text(self, text, start, x, y):
         return Print(self._screen,
@@ -30,13 +30,13 @@ class Car(Scene):
         effects = [
             Rain(self._screen, self.duration),
             self.intro_text(self.car_text, 0, x=22, y=10),
-            self.intro_text(constants.car_scene_story_text, 40, x=2, y=45),
+            self.intro_text(constants.captain_scene_story_text, 40, x=12, y=35),
         ]
         for fx in effects:
             self.add_effect(fx)
 
     def process_event(self, event):
-        super(Car, self).process_event(event)
+        super(Captain, self).process_event(event)
         if isinstance(event, KeyboardEvent):
             if event.key_code == 32:  # SPACE key
                 raise NextScene
